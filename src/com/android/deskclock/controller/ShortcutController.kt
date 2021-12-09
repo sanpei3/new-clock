@@ -14,7 +14,7 @@
  * limitations under the License.
  */
 
-package com.android.deskclock.controller
+package com.best.deskclock.controller
 
 import android.annotation.TargetApi
 import android.content.ComponentName

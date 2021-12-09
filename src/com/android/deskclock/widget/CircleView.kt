@@ -13,7 +13,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package com.android.deskclock.widget
+package com.best.deskclock.widget
 
 import android.annotation.SuppressLint
 import android.content.Context

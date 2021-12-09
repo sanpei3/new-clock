@@ -12,7 +12,7 @@
  * the License.
  */
 
-package com.android.deskclock.timer
+package com.best.deskclock.timer
 
 import android.content.Intent
 import android.content.pm.ActivityInfo

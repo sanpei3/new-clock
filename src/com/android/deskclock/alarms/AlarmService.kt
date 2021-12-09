@@ -14,7 +14,7 @@
  * limitations under the License.
  */
 
-package com.android.deskclock.alarms
+package com.best.deskclock.alarms
 
 import android.app.Service
 import android.content.BroadcastReceiver

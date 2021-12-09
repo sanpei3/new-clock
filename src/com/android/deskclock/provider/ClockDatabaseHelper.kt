@@ -14,7 +14,7 @@
  * limitations under the License.
  */
 
-package com.android.deskclock.provider
+package com.best.deskclock.provider
 
 import android.content.ContentValues
 import android.content.Context

@@ -14,7 +14,7 @@
  * limitations under the License.
  */
 
-package com.android.deskclock.settings
+package com.best.deskclock.settings
 
 import android.annotation.TargetApi
 import android.app.NotificationManager

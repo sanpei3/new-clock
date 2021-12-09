@@ -14,7 +14,7 @@
  * limitations under the License.
  */
 
-package com.android.deskclock.stopwatch
+package com.best.deskclock.stopwatch
 
 import android.content.Context
 import android.text.format.DateUtils

@@ -14,7 +14,7 @@
  * limitations under the License.
  */
 
-package com.android.deskclock.settings
+package com.best.deskclock.settings
 
 import android.content.Context
 import android.content.Intent

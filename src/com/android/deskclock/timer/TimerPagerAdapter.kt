@@ -14,7 +14,7 @@
  * limitations under the License.
  */
 
-package com.android.deskclock.timer
+package com.best.deskclock.timer
 
 import android.annotation.SuppressLint
 import android.util.ArrayMap

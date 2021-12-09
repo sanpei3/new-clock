@@ -13,7 +13,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License
  */
-package com.android.deskclock
+package com.best.deskclock
 
 import android.content.Context
 import android.text.format.DateFormat

@@ -14,7 +14,7 @@
  * limitations under the License.
  */
 
-package com.android.deskclock.worldclock
+package com.best.deskclock.worldclock
 
 import android.content.Context
 import android.os.Bundle

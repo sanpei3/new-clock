@@ -14,7 +14,7 @@
  * limitations under the License.
  */
 
-package com.android.deskclock.uidata
+package com.best.deskclock.uidata
 
 import android.content.SharedPreferences
 import android.text.TextUtils

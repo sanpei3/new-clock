@@ -14,7 +14,7 @@
  * limitations under the License.
  */
 
-package com.android.deskclock
+package com.best.deskclock
 
 import android.util.ArrayMap
 import android.view.View

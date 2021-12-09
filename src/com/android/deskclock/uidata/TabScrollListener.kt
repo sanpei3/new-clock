@@ -14,7 +14,7 @@
  * limitations under the License.
  */
 
-package com.android.deskclock.uidata
+package com.best.deskclock.uidata
 
 /**
  * The interface through which interested parties are notified of changes to the vertical scroll

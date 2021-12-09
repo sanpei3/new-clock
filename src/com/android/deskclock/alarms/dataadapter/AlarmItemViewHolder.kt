@@ -14,7 +14,7 @@
  * limitations under the License.
  */
 
-package com.android.deskclock.alarms.dataadapter
+package com.best.deskclock.alarms.dataadapter
 
 import android.content.Context
 import android.view.View

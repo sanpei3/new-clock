@@ -14,7 +14,7 @@
  * limitations under the License.
  */
 
-package com.android.deskclock.controller
+package com.best.deskclock.controller
 
 import android.app.Activity
 import android.content.Context

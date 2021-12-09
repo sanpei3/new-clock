@@ -14,7 +14,7 @@
  * limitations under the License.
  */
 
-package com.android.deskclock.stopwatch
+package com.best.deskclock.stopwatch
 
 import android.R.attr.state_activated
 import android.R.attr.state_pressed

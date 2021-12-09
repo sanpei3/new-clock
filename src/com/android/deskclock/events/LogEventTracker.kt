@@ -14,7 +14,7 @@
  * limitations under the License.
  */
 
-package com.android.deskclock.events
+package com.best.deskclock.events
 
 import android.content.Context
 import androidx.annotation.StringRes

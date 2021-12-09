@@ -14,7 +14,7 @@
  * limitations under the License.
  */
 
-package com.android.deskclock.widget.selector
+package com.best.deskclock.widget.selector
 
 import com.android.deskclock.provider.Alarm
 
