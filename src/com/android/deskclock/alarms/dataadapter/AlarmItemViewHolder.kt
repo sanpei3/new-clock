@@ -22,14 +22,14 @@ import android.widget.CompoundButton
 import android.widget.ImageView
 import android.widget.TextView
 
-import com.android.deskclock.AlarmUtils
-import com.android.deskclock.ItemAdapter.ItemViewHolder
-import com.android.deskclock.ItemAnimator.OnAnimateChangeListener
-import com.android.deskclock.R
-import com.android.deskclock.provider.Alarm
-import com.android.deskclock.provider.AlarmInstance
-import com.android.deskclock.provider.ClockContract.InstancesColumns
-import com.android.deskclock.widget.TextTime
+import com.best.deskclock.AlarmUtils
+import com.best.deskclock.ItemAdapter.ItemViewHolder
+import com.best.deskclock.ItemAnimator.OnAnimateChangeListener
+import com.best.deskclock.R
+import com.best.deskclock.provider.Alarm
+import com.best.deskclock.provider.AlarmInstance
+import com.best.deskclock.provider.ClockContract.InstancesColumns
+import com.best.deskclock.widget.TextTime
 
 /**
  * Abstract ViewHolder for alarm time items.

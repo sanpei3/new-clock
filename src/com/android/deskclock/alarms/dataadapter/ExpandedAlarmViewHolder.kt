@@ -39,16 +39,16 @@ import android.widget.TextView
 import androidx.core.content.ContextCompat
 import androidx.recyclerview.widget.RecyclerView.ViewHolder
 
-import com.android.deskclock.AnimatorUtils
-import com.android.deskclock.ItemAdapter.ItemViewHolder
-import com.android.deskclock.R
-import com.android.deskclock.ThemeUtils
-import com.android.deskclock.Utils
-import com.android.deskclock.alarms.AlarmTimeClickHandler
-import com.android.deskclock.data.DataModel
-import com.android.deskclock.events.Events
-import com.android.deskclock.provider.Alarm
-import com.android.deskclock.uidata.UiDataModel
+import com.best.deskclock.AnimatorUtils
+import com.best.deskclock.ItemAdapter.ItemViewHolder
+import com.best.deskclock.R
+import com.best.deskclock.ThemeUtils
+import com.best.deskclock.Utils
+import com.best.deskclock.alarms.AlarmTimeClickHandler
+import com.best.deskclock.data.DataModel
+import com.best.deskclock.events.Events
+import com.best.deskclock.provider.Alarm
+import com.best.deskclock.uidata.UiDataModel
 
 /**
  * A ViewHolder containing views for an alarm item in expanded state.

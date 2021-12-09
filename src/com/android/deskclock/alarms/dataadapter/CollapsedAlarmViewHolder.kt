@@ -28,12 +28,12 @@ import android.view.ViewGroup
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView.ViewHolder
 
-import com.android.deskclock.AnimatorUtils
-import com.android.deskclock.ItemAdapter.ItemViewHolder
-import com.android.deskclock.R
-import com.android.deskclock.data.DataModel
-import com.android.deskclock.events.Events
-import com.android.deskclock.provider.Alarm
+import com.best.deskclock.AnimatorUtils
+import com.best.deskclock.ItemAdapter.ItemViewHolder
+import com.best.deskclock.R
+import com.best.deskclock.data.DataModel
+import com.best.deskclock.events.Events
+import com.best.deskclock.provider.Alarm
 
 import java.util.Calendar
 

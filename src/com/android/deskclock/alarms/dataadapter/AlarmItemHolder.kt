@@ -18,10 +18,10 @@ package com.best.deskclock.alarms.dataadapter
 
 import android.os.Bundle
 
-import com.android.deskclock.ItemAdapter.ItemHolder
-import com.android.deskclock.alarms.AlarmTimeClickHandler
-import com.android.deskclock.provider.Alarm
-import com.android.deskclock.provider.AlarmInstance
+import com.best.deskclock.ItemAdapter.ItemHolder
+import com.best.deskclock.alarms.AlarmTimeClickHandler
+import com.best.deskclock.provider.Alarm
+import com.best.deskclock.provider.AlarmInstance
 
 class AlarmItemHolder(
     alarm: Alarm,

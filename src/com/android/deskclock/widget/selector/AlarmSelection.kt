@@ -16,7 +16,7 @@
 
 package com.best.deskclock.widget.selector
 
-import com.android.deskclock.provider.Alarm
+import com.best.deskclock.provider.Alarm
 
 /**
  * Created a new selectable item with a visual label and an id.
