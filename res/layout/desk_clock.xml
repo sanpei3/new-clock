@@ -15,129 +15,117 @@
   limitations under the License.
   -->
 
-<LinearLayout
+<androidx.coordinatorlayout.widget.CoordinatorLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/content"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:orientation="vertical"
-    app:statusBarBackground="@null"
-    android:fitsSystemWindows="true">
+    android:fitsSystemWindows="true"
+    app:statusBarBackground="@null">
 
-    <androidx.coordinatorlayout.widget.CoordinatorLayout
-        android:id="@+id/content"
+    <com.google.android.material.appbar.AppBarLayout
         android:layout_width="match_parent"
-        android:layout_height="0dp"
-        android:layout_weight="1">
+        android:layout_height="wrap_content"
+        android:background="@null"
+        app:elevation="0dp">
 
-        <com.google.android.material.appbar.AppBarLayout
-             android:layout_width="match_parent"
-             android:layout_height="?actionBarSize"                                      
-             android:background="@null"
-             app:elevation="0dp">
+        <androidx.appcompat.widget.Toolbar
+            android:id="@+id/toolbar"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:contentInsetStart="0dp"
+            tools:ignore="RtlSymmetry">
 
-            <androidx.appcompat.widget.Toolbar
-                android:id="@+id/toolbar"
+            <com.google.android.material.tabs.TabLayout
+                android:id="@+id/tabs"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                app:contentInsetStart="0dp"
-                tools:ignore="RtlSymmetry"
-                android:gravity="center">
-            
-
-            <TextView
-                android:id="@+id/title_view"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_gravity="start"
- 		            android:layout_marginStart="26dp"
-                android:layout_marginTop="10dp"
-                android:layout_marginBottom="10dp"
- 		            android:textSize="25sp"
-                style="@style/TextAppearance.AppCompat.Widget.ActionBar.Title" />
+                android:layout_height="match_parent"
+                app:tabGravity="fill"
+                app:tabIndicatorColor="@android:color/transparent"
+                app:tabMaxWidth="0dp"
+                app:tabMode="fixed"
+                app:tabPaddingEnd="0dp"
+                app:tabPaddingStart="0dp" />
 
         </androidx.appcompat.widget.Toolbar>
+
+        <View
+            android:id="@+id/tab_hairline"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/hairline_height"
+            android:layout_gravity="bottom"
+            android:background="@color/hairline"
+            android:importantForAccessibility="no" />
+
     </com.google.android.material.appbar.AppBarLayout>
 
-    
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        app:layout_behavior="@string/appbar_scrolling_view_behavior">
 
         <androidx.viewpager.widget.ViewPager
             android:id="@+id/desk_clock_pager"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:importantForAccessibility="no"
-            android:saveEnabled="false"
-            app:layout_behavior="@string/appbar_scrolling_view_behavior" />
+            android:saveEnabled="false" />
 
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_gravity="bottom"
-            android:baselineAligned="false"
-            android:orientation="horizontal"
-            app:layout_behavior="com.best.deskclock.widget.toast.SnackbarSlidingBehavior">
+        <include layout="@layout/drop_shadow" />
 
-            <FrameLayout
-                android:layout_width="0dp"
-                android:layout_height="match_parent"
-                android:layout_gravity="start|center_vertical"
-                android:layout_weight="1">
+    </FrameLayout>
 
-                <Button
-                    android:id="@+id/left_button"
-                    style="?attr/borderlessButtonStyle"
-                    android:background="?android:selectableItemBackgroundBorderless"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_gravity="center"
-                    android:minHeight="48dp"
-                    android:minWidth="48dp"
-                    android:scaleType="centerInside" />
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="bottom"
+        android:baselineAligned="false"
+        android:orientation="horizontal"
+        app:layout_behavior="com.android.deskclock.widget.toast.SnackbarSlidingBehavior">
 
-            </FrameLayout>
+        <FrameLayout
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_gravity="start|center_vertical"
+            android:layout_weight="1">
 
-            <com.google.android.material.floatingactionbutton.FloatingActionButton
-                android:id="@+id/fab"
+            <Button
+                android:id="@+id/left_button"
+                style="?attr/borderlessButtonStyle"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center"
-                android:layout_margin="@dimen/fab_margin"
-                app:borderWidth="0dp"/>
+                android:scaleType="centerInside" />
 
-            <FrameLayout
-                android:layout_width="0dp"
-                android:layout_height="match_parent"
-                android:layout_gravity="end|center_vertical"
-                android:layout_weight="1">
+        </FrameLayout>
 
-                <Button
-                    android:id="@+id/right_button"
-                    style="?attr/borderlessButtonStyle"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:background="?android:selectableItemBackgroundBorderless"
-                    android:layout_gravity="center"
-                    android:minHeight="48dp"
-                    android:minWidth="48dp"
-                    android:scaleType="centerInside" />
+        <com.google.android.material.floatingactionbutton.FloatingActionButton
+            android:id="@+id/fab"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_margin="@dimen/fab_margin"
+            app:borderWidth="0dp"
+            app:elevation="@dimen/fab_elevation" />
 
-            </FrameLayout>
+        <FrameLayout
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_gravity="end|center_vertical"
+            android:layout_weight="1">
 
-        </LinearLayout>
+            <Button
+                android:id="@+id/right_button"
+                style="?attr/borderlessButtonStyle"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:scaleType="centerInside" />
 
-    </androidx.coordinatorlayout.widget.CoordinatorLayout>
+        </FrameLayout>
 
-    <com.google.android.material.bottomnavigation.BottomNavigationView
-        android:id="@+id/bottom_view"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:background="@drawable/navigation_bar_background"
-        app:menu="@menu/bottom_navigation_menu"
-        app:itemIconTint="@color/tab_tint_color"
-        app:itemTextColor="@color/tab_tint_color"
-        app:itemTextAppearanceActive="@style/navText"
-        app:itemTextAppearanceInactive="@style/navText"
-        app:labelVisibilityMode="labeled" />
+    </LinearLayout>
 
-</LinearLayout>
+</androidx.coordinatorlayout.widget.CoordinatorLayout>

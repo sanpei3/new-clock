@@ -32,7 +32,7 @@
 
         <TextClock
             android:id="@+id/digital_clock"
-            style="@style/alarm_display_time"
+            style="@style/display_time"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_marginTop="?attr/actionBarSize"
@@ -47,7 +47,7 @@
 
         <TextView
             android:id="@+id/title"
-            style="@style/alarm_body"
+            style="@style/body"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:gravity="center"
@@ -58,7 +58,7 @@
             app:layout_columnSpan="3"
             app:layout_gravity="fill_horizontal" />
 
-        <com.best.deskclock.widget.CircleView
+        <com.android.deskclock.widget.CircleView
             android:id="@+id/pulse"
             android:layout_width="0dp"
             android:layout_height="0dp"
