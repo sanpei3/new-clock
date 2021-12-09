@@ -22,8 +22,8 @@ import android.view.ViewGroup
 import android.widget.ImageView
 import android.widget.TextView
 
-import com.android.deskclock.ItemAdapter.ItemViewHolder
-import com.android.deskclock.R
+import com.best.deskclock.ItemAdapter.ItemViewHolder
+import com.best.deskclock.R
 
 internal class AddCustomRingtoneViewHolder private constructor(itemView: View)
     : ItemViewHolder<AddCustomRingtoneHolder>(itemView), View.OnClickListener {

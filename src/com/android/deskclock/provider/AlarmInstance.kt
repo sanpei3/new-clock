@@ -26,12 +26,12 @@ import android.media.RingtoneManager
 import android.net.Uri
 import android.provider.BaseColumns._ID
 
-import com.android.deskclock.LogUtils
-import com.android.deskclock.R
-import com.android.deskclock.alarms.AlarmStateManager
-import com.android.deskclock.data.DataModel
-import com.android.deskclock.provider.ClockContract.AlarmSettingColumns
-import com.android.deskclock.provider.ClockContract.InstancesColumns
+import com.best.deskclock.LogUtils
+import com.best.deskclock.R
+import com.best.deskclock.alarms.AlarmStateManager
+import com.best.deskclock.data.DataModel
+import com.best.deskclock.provider.ClockContract.AlarmSettingColumns
+import com.best.deskclock.provider.ClockContract.InstancesColumns
 
 import java.util.Calendar
 import java.util.LinkedList

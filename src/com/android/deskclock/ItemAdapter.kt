@@ -23,8 +23,8 @@ import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
 import androidx.recyclerview.widget.RecyclerView.NO_ID
 
-import com.android.deskclock.ItemAdapter.ItemHolder
-import com.android.deskclock.ItemAdapter.ItemViewHolder
+import com.best.deskclock.ItemAdapter.ItemHolder
+import com.best.deskclock.ItemAdapter.ItemViewHolder
 
 import kotlin.math.min
 

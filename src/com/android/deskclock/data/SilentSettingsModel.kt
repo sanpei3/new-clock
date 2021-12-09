@@ -41,8 +41,8 @@ import android.provider.Settings.System.CONTENT_URI
 import android.provider.Settings.System.DEFAULT_ALARM_ALERT_URI
 import androidx.core.app.NotificationManagerCompat
 
-import com.android.deskclock.Utils
-import com.android.deskclock.data.DataModel.SilentSetting
+import com.best.deskclock.Utils
+import com.best.deskclock.data.DataModel.SilentSetting
 
 /**
  * This model fetches and stores reasons that alarms may be suppressed or silenced by system

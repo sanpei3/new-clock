@@ -20,8 +20,8 @@ import android.app.Activity
 import android.content.Context
 import androidx.annotation.StringRes
 
-import com.android.deskclock.Utils
-import com.android.deskclock.events.EventTracker
+import com.best.deskclock.Utils
+import com.best.deskclock.events.EventTracker
 
 /**
  * Interactions with Android framework components responsible for part of the user experience are

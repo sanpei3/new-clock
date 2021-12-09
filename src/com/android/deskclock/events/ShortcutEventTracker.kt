@@ -23,8 +23,8 @@ import android.os.Build
 import android.util.ArraySet
 import androidx.annotation.StringRes
 
-import com.android.deskclock.R
-import com.android.deskclock.uidata.UiDataModel
+import com.best.deskclock.R
+import com.best.deskclock.uidata.UiDataModel
 
 @TargetApi(Build.VERSION_CODES.N_MR1)
 class ShortcutEventTracker(context: Context) : EventTracker {

@@ -22,8 +22,8 @@ import android.widget.ImageView
 import androidx.annotation.ColorInt
 import androidx.fragment.app.Fragment
 
-import com.android.deskclock.FabContainer.UpdateFabFlag
-import com.android.deskclock.uidata.UiDataModel
+import com.best.deskclock.FabContainer.UpdateFabFlag
+import com.best.deskclock.uidata.UiDataModel
 
 abstract class DeskClockFragment(
     /** The tab associated with this fragment.  */

@@ -29,12 +29,12 @@ import android.view.View
 import android.view.ViewGroup
 import android.view.WindowManager
 
-import com.android.deskclock.BaseActivity
-import com.android.deskclock.LogUtils
-import com.android.deskclock.R
-import com.android.deskclock.data.DataModel
-import com.android.deskclock.data.Timer
-import com.android.deskclock.data.TimerListener
+import com.best.deskclock.BaseActivity
+import com.best.deskclock.LogUtils
+import com.best.deskclock.R
+import com.best.deskclock.data.DataModel
+import com.best.deskclock.data.Timer
+import com.best.deskclock.data.TimerListener
 
 /**
  * This activity is designed to be shown over the lock screen. As such, it displays the expired

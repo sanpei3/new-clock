@@ -28,7 +28,7 @@ import android.view.inputmethod.EditorInfo
 import androidx.appcompat.widget.SearchView
 import androidx.appcompat.widget.SearchView.OnQueryTextListener
 
-import com.android.deskclock.R
+import com.best.deskclock.R
 
 /**
  * [MenuItemController] for search menu.

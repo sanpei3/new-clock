@@ -33,10 +33,10 @@ import android.widget.SeekBar
 import androidx.preference.Preference
 import androidx.preference.PreferenceViewHolder
 
-import com.android.deskclock.R
-import com.android.deskclock.RingtonePreviewKlaxon
-import com.android.deskclock.Utils
-import com.android.deskclock.data.DataModel
+import com.best.deskclock.R
+import com.best.deskclock.RingtonePreviewKlaxon
+import com.best.deskclock.Utils
+import com.best.deskclock.data.DataModel
 
 class AlarmVolumePreference(context: Context?, attrs: AttributeSet?) : Preference(context, attrs) {
     private lateinit var mSeekbar: SeekBar

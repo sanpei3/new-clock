@@ -24,7 +24,7 @@ import android.os.Handler
 import android.os.Looper
 import android.provider.Settings
 
-import com.android.deskclock.provider.ClockContract.AlarmSettingColumns
+import com.best.deskclock.provider.ClockContract.AlarmSettingColumns
 
 /**
  * All alarm data will eventually be accessed via this model.

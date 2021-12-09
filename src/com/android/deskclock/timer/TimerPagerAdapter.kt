@@ -25,9 +25,9 @@ import androidx.fragment.app.FragmentManager
 import androidx.fragment.app.FragmentTransaction
 import androidx.viewpager.widget.PagerAdapter
 
-import com.android.deskclock.data.DataModel
-import com.android.deskclock.data.Timer
-import com.android.deskclock.data.TimerListener
+import com.best.deskclock.data.DataModel
+import com.best.deskclock.data.Timer
+import com.best.deskclock.data.TimerListener
 
 /**
  * This adapter produces a [TimerItemFragment] for each timer.

@@ -23,7 +23,7 @@ import android.transition.TransitionSet
 import android.view.View
 import android.view.ViewGroup
 
-import com.android.deskclock.Utils
+import com.best.deskclock.Utils
 
 /**
  * Controller that displays empty view and handles animation appropriately.

@@ -32,13 +32,13 @@ import android.provider.BaseColumns
 import android.text.TextUtils
 import android.util.ArrayMap
 
-import com.android.deskclock.LogUtils
-import com.android.deskclock.Utils
-import com.android.deskclock.provider.ClockContract.AlarmSettingColumns
-import com.android.deskclock.provider.ClockContract.AlarmsColumns
-import com.android.deskclock.provider.ClockContract.InstancesColumns
-import com.android.deskclock.provider.ClockDatabaseHelper.Companion.ALARMS_TABLE_NAME
-import com.android.deskclock.provider.ClockDatabaseHelper.Companion.INSTANCES_TABLE_NAME
+import com.best.deskclock.LogUtils
+import com.best.deskclock.Utils
+import com.best.deskclock.provider.ClockContract.AlarmSettingColumns
+import com.best.deskclock.provider.ClockContract.AlarmsColumns
+import com.best.deskclock.provider.ClockContract.InstancesColumns
+import com.best.deskclock.provider.ClockDatabaseHelper.Companion.ALARMS_TABLE_NAME
+import com.best.deskclock.provider.ClockDatabaseHelper.Companion.INSTANCES_TABLE_NAME
 
 class ClockProvider : ContentProvider() {
 

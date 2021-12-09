@@ -22,8 +22,8 @@ import android.text.format.DateUtils.MINUTE_IN_MILLIS
 import android.text.format.DateUtils.SECOND_IN_MILLIS
 import androidx.annotation.StringRes
 
-import com.android.deskclock.R
-import com.android.deskclock.Utils
+import com.best.deskclock.R
+import com.best.deskclock.Utils
 
 object TimerStringFormatter {
     /**

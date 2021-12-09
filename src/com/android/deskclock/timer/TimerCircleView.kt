@@ -24,10 +24,10 @@ import android.graphics.RectF
 import android.util.AttributeSet
 import android.view.View
 
-import com.android.deskclock.R
-import com.android.deskclock.ThemeUtils
-import com.android.deskclock.Utils
-import com.android.deskclock.data.Timer
+import com.best.deskclock.R
+import com.best.deskclock.ThemeUtils
+import com.best.deskclock.Utils
+import com.best.deskclock.data.Timer
 
 import kotlin.math.cos
 import kotlin.math.min

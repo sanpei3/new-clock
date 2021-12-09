@@ -18,15 +18,15 @@ package com.best.deskclock.events
 
 import androidx.annotation.StringRes
 
-import com.android.deskclock.R
-import com.android.deskclock.controller.Controller
+import com.best.deskclock.R
+import com.best.deskclock.controller.Controller
 
 /**
  * This thin layer over [Controller.sendEvent] eases the API usage.
  */
 object Events {
     /** Extra describing the entity responsible for the action being performed.  */
-    const val EXTRA_EVENT_LABEL = "com.android.deskclock.extra.EVENT_LABEL"
+    const val EXTRA_EVENT_LABEL = "com.best.deskclock.extra.EVENT_LABEL"
 
     /**
      * Tracks an alarm event.

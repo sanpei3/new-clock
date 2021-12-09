@@ -24,7 +24,7 @@ import android.text.TextUtils
 import android.util.ArrayMap
 import androidx.annotation.VisibleForTesting
 
-import com.android.deskclock.R
+import com.best.deskclock.R
 
 import java.util.Locale
 import java.util.regex.Pattern

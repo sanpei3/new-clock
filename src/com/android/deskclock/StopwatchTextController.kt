@@ -19,7 +19,7 @@ package com.best.deskclock
 import android.text.format.DateUtils
 import android.widget.TextView
 
-import com.android.deskclock.uidata.UiDataModel
+import com.best.deskclock.uidata.UiDataModel
 
 /**
  * A controller which will format a provided time in millis to display as a stopwatch.

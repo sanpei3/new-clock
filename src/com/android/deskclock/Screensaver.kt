@@ -31,8 +31,8 @@ import android.view.View
 import android.view.ViewTreeObserver.OnPreDrawListener
 import android.widget.TextClock
 
-import com.android.deskclock.data.DataModel
-import com.android.deskclock.uidata.UiDataModel
+import com.best.deskclock.data.DataModel
+import com.best.deskclock.uidata.UiDataModel
 
 class Screensaver : DreamService() {
     private val mStartPositionUpdater: OnPreDrawListener = StartPositionUpdater()

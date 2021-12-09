@@ -25,13 +25,13 @@ import android.text.format.DateUtils
 import android.text.format.DateUtils.HOUR_IN_MILLIS
 import android.text.format.DateUtils.MINUTE_IN_MILLIS
 
-import com.android.deskclock.R
-import com.android.deskclock.data.DataModel.AlarmVolumeButtonBehavior
-import com.android.deskclock.data.DataModel.CitySort
-import com.android.deskclock.data.DataModel.ClockStyle
-import com.android.deskclock.data.Weekdays.Order
-import com.android.deskclock.settings.ScreensaverSettingsActivity
-import com.android.deskclock.settings.SettingsActivity
+import com.best.deskclock.R
+import com.best.deskclock.data.DataModel.AlarmVolumeButtonBehavior
+import com.best.deskclock.data.DataModel.CitySort
+import com.best.deskclock.data.DataModel.ClockStyle
+import com.best.deskclock.data.Weekdays.Order
+import com.best.deskclock.settings.ScreensaverSettingsActivity
+import com.best.deskclock.settings.SettingsActivity
 
 import java.util.Arrays
 import java.util.Calendar

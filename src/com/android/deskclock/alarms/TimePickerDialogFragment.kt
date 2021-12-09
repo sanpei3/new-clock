@@ -27,7 +27,7 @@ import androidx.fragment.app.DialogFragment
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.FragmentManager
 
-import com.android.deskclock.Utils
+import com.best.deskclock.Utils
 
 import java.util.Calendar
 

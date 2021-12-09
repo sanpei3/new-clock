@@ -19,7 +19,7 @@ package com.best.deskclock
 import android.content.Context
 import android.net.Uri
 
-import com.android.deskclock.LogUtils.i
+import com.best.deskclock.LogUtils.i
 
 object RingtonePreviewKlaxon {
     private var sAsyncRingtonePlayer: AsyncRingtonePlayer? = null

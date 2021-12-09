@@ -21,12 +21,12 @@ import android.content.Context
 import android.content.Intent
 import android.os.IBinder
 
-import com.android.deskclock.DeskClock
-import com.android.deskclock.R
-import com.android.deskclock.data.DataModel
-import com.android.deskclock.data.Timer
-import com.android.deskclock.events.Events
-import com.android.deskclock.uidata.UiDataModel
+import com.best.deskclock.DeskClock
+import com.best.deskclock.R
+import com.best.deskclock.data.DataModel
+import com.best.deskclock.data.Timer
+import com.best.deskclock.events.Events
+import com.best.deskclock.uidata.UiDataModel
 
 /**
  *
@@ -118,7 +118,7 @@ class TimerService : Service() {
     }
 
     companion object {
-        private const val ACTION_PREFIX = "com.android.deskclock.action."
+        private const val ACTION_PREFIX = "com.best.deskclock.action."
 
         /** Shows the tab with timers; scrolls to a specific timer.  */
         const val ACTION_SHOW_TIMER = ACTION_PREFIX + "SHOW_TIMER"
@@ -131,7 +131,7 @@ class TimerService : Service() {
         /** Adds an extra minute to the timer.  */
         const val ACTION_ADD_MINUTE_TIMER = ACTION_PREFIX + "ADD_MINUTE_TIMER"
         /** Extra for many actions specific to a given timer.  */
-        const val EXTRA_TIMER_ID = "com.android.deskclock.extra.TIMER_ID"
+        const val EXTRA_TIMER_ID = "com.best.deskclock.extra.TIMER_ID"
 
         private const val ACTION_TIMER_EXPIRED = ACTION_PREFIX + "TIMER_EXPIRED"
         private const val ACTION_UPDATE_NOTIFICATION = ACTION_PREFIX + "UPDATE_NOTIFICATION"

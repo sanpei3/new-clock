@@ -59,9 +59,9 @@ import androidx.core.view.accessibility.AccessibilityNodeInfoCompat
 import androidx.core.view.accessibility.AccessibilityNodeInfoCompat.AccessibilityActionCompat
 import androidx.vectordrawable.graphics.drawable.VectorDrawableCompat
 
-import com.android.deskclock.data.DataModel
-import com.android.deskclock.provider.AlarmInstance
-import com.android.deskclock.uidata.UiDataModel
+import com.best.deskclock.data.DataModel
+import com.best.deskclock.provider.AlarmInstance
+import com.best.deskclock.uidata.UiDataModel
 
 import java.text.NumberFormat
 import java.text.SimpleDateFormat

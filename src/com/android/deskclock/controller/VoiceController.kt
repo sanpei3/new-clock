@@ -24,7 +24,7 @@ import android.app.VoiceInteractor.CompleteVoiceRequest
 import android.app.VoiceInteractor.Prompt
 import android.os.Build
 
-import com.android.deskclock.Utils
+import com.best.deskclock.Utils
 
 @TargetApi(Build.VERSION_CODES.M)
 internal class VoiceController {

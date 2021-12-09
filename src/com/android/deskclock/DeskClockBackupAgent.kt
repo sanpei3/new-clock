@@ -26,10 +26,10 @@ import android.content.Intent
 import android.os.ParcelFileDescriptor
 import android.os.SystemClock
 
-import com.android.deskclock.alarms.AlarmStateManager
-import com.android.deskclock.data.DataModel
-import com.android.deskclock.provider.Alarm
-import com.android.deskclock.provider.AlarmInstance
+import com.best.deskclock.alarms.AlarmStateManager
+import com.best.deskclock.data.DataModel
+import com.best.deskclock.provider.Alarm
+import com.best.deskclock.provider.AlarmInstance
 
 import java.io.File
 import java.io.IOException
@@ -110,7 +110,7 @@ class DeskClockBackupAgent : BackupAgent() {
     companion object {
         private val LOGGER = LogUtils.Logger("DeskClockBackupAgent")
 
-        const val ACTION_COMPLETE_RESTORE = "com.android.deskclock.action.COMPLETE_RESTORE"
+        const val ACTION_COMPLETE_RESTORE = "com.best.deskclock.action.COMPLETE_RESTORE"
 
         /**
          * @param context a context to access resources and services

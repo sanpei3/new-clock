@@ -21,8 +21,8 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.TextView
 
-import com.android.deskclock.ItemAdapter.ItemViewHolder
-import com.android.deskclock.R
+import com.best.deskclock.ItemAdapter.ItemViewHolder
+import com.best.deskclock.R
 
 internal class HeaderViewHolder private constructor(itemView: View)
     : ItemViewHolder<HeaderHolder>(itemView) {

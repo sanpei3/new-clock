@@ -25,12 +25,12 @@ import android.widget.TextView
 import androidx.annotation.VisibleForTesting
 import androidx.recyclerview.widget.RecyclerView
 
-import com.android.deskclock.R
-import com.android.deskclock.data.DataModel
-import com.android.deskclock.data.Lap
-import com.android.deskclock.data.Stopwatch
-import com.android.deskclock.stopwatch.LapsAdapter.LapItemHolder
-import com.android.deskclock.uidata.UiDataModel
+import com.best.deskclock.R
+import com.best.deskclock.data.DataModel
+import com.best.deskclock.data.Lap
+import com.best.deskclock.data.Stopwatch
+import com.best.deskclock.stopwatch.LapsAdapter.LapItemHolder
+import com.best.deskclock.uidata.UiDataModel
 
 import java.text.DecimalFormatSymbols
 

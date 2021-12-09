@@ -25,7 +25,7 @@ import android.util.Property
 import android.view.Gravity
 import android.view.View
 
-import com.android.deskclock.R
+import com.best.deskclock.R
 
 import kotlin.math.min
 

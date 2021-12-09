@@ -28,11 +28,11 @@ import android.widget.LinearLayout
 import android.widget.TextView
 import androidx.core.view.ViewCompat
 
-import com.android.deskclock.R
-import com.android.deskclock.ThemeUtils
-import com.android.deskclock.TimerTextController
-import com.android.deskclock.Utils.ClickAccessibilityDelegate
-import com.android.deskclock.data.Timer
+import com.best.deskclock.R
+import com.best.deskclock.ThemeUtils
+import com.best.deskclock.TimerTextController
+import com.best.deskclock.Utils.ClickAccessibilityDelegate
+import com.best.deskclock.data.Timer
 
 /**
  * This view is a visual representation of a [Timer].

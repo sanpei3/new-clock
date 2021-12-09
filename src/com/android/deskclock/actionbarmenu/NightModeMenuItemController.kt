@@ -22,9 +22,9 @@ import android.view.Menu
 import android.view.Menu.NONE
 import android.view.MenuItem
 
-import com.android.deskclock.R
-import com.android.deskclock.ScreensaverActivity
-import com.android.deskclock.events.Events
+import com.best.deskclock.R
+import com.best.deskclock.ScreensaverActivity
+import com.best.deskclock.events.Events
 
 /**
  * [MenuItemController] for controlling night mode display.

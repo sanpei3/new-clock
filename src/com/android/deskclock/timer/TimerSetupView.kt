@@ -33,11 +33,11 @@ import android.widget.TextView
 import androidx.annotation.IdRes
 import androidx.core.view.ViewCompat
 
-import com.android.deskclock.FabContainer
-import com.android.deskclock.FormattedTextUtils
-import com.android.deskclock.R
-import com.android.deskclock.ThemeUtils
-import com.android.deskclock.uidata.UiDataModel
+import com.best.deskclock.FabContainer
+import com.best.deskclock.FormattedTextUtils
+import com.best.deskclock.R
+import com.best.deskclock.ThemeUtils
+import com.best.deskclock.uidata.UiDataModel
 
 import java.io.Serializable
 

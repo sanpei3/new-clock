@@ -21,10 +21,10 @@ import android.content.BroadcastReceiver
 import android.content.Context
 import android.content.Intent
 
-import com.android.deskclock.AlarmAlertWakeLock.createPartialWakeLock
-import com.android.deskclock.alarms.AlarmStateManager
-import com.android.deskclock.controller.Controller
-import com.android.deskclock.data.DataModel
+import com.best.deskclock.AlarmAlertWakeLock.createPartialWakeLock
+import com.best.deskclock.alarms.AlarmStateManager
+import com.best.deskclock.controller.Controller
+import com.best.deskclock.data.DataModel
 
 class AlarmInitReceiver : BroadcastReceiver() {
     /**

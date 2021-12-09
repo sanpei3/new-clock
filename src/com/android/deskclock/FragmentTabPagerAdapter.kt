@@ -24,7 +24,7 @@ import androidx.fragment.app.FragmentManager
 import androidx.fragment.app.FragmentTransaction
 import androidx.viewpager.widget.PagerAdapter
 
-import com.android.deskclock.uidata.UiDataModel
+import com.best.deskclock.uidata.UiDataModel
 
 /**
  * This adapter produces the DeskClockFragments that are the content of the DeskClock tabs. The

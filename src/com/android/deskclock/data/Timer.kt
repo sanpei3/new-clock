@@ -21,7 +21,7 @@ import android.text.format.DateUtils.HOUR_IN_MILLIS
 import android.text.format.DateUtils.MINUTE_IN_MILLIS
 import android.text.format.DateUtils.SECOND_IN_MILLIS
 
-import com.android.deskclock.Utils
+import com.best.deskclock.Utils
 
 import kotlin.math.max
 import kotlin.math.min

@@ -29,21 +29,21 @@ import android.text.TextUtils
 import android.text.format.DateFormat
 import android.text.format.DateUtils
 
-import com.android.deskclock.AlarmUtils.popAlarmSetToast
-import com.android.deskclock.alarms.AlarmStateManager
-import com.android.deskclock.controller.Controller
-import com.android.deskclock.data.DataModel
-import com.android.deskclock.data.Timer
-import com.android.deskclock.data.Weekdays
-import com.android.deskclock.events.Events
-import com.android.deskclock.provider.Alarm
-import com.android.deskclock.provider.AlarmInstance
-import com.android.deskclock.provider.ClockContract
-import com.android.deskclock.provider.ClockContract.AlarmSettingColumns
-import com.android.deskclock.provider.ClockContract.AlarmsColumns
-import com.android.deskclock.timer.TimerFragment
-import com.android.deskclock.timer.TimerService
-import com.android.deskclock.uidata.UiDataModel
+import com.best.deskclock.AlarmUtils.popAlarmSetToast
+import com.best.deskclock.alarms.AlarmStateManager
+import com.best.deskclock.controller.Controller
+import com.best.deskclock.data.DataModel
+import com.best.deskclock.data.Timer
+import com.best.deskclock.data.Weekdays
+import com.best.deskclock.events.Events
+import com.best.deskclock.provider.Alarm
+import com.best.deskclock.provider.AlarmInstance
+import com.best.deskclock.provider.ClockContract
+import com.best.deskclock.provider.ClockContract.AlarmSettingColumns
+import com.best.deskclock.provider.ClockContract.AlarmsColumns
+import com.best.deskclock.timer.TimerFragment
+import com.best.deskclock.timer.TimerService
+import com.best.deskclock.uidata.UiDataModel
 
 import java.util.Calendar
 import java.util.Date

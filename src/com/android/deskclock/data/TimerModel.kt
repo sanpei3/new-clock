@@ -33,14 +33,14 @@ import android.text.format.DateUtils.MINUTE_IN_MILLIS
 import androidx.annotation.StringRes
 import androidx.core.app.NotificationManagerCompat
 
-import com.android.deskclock.AlarmAlertWakeLock
-import com.android.deskclock.LogUtils
-import com.android.deskclock.R
-import com.android.deskclock.Utils
-import com.android.deskclock.events.Events
-import com.android.deskclock.settings.SettingsActivity
-import com.android.deskclock.timer.TimerKlaxon
-import com.android.deskclock.timer.TimerService
+import com.best.deskclock.AlarmAlertWakeLock
+import com.best.deskclock.LogUtils
+import com.best.deskclock.R
+import com.best.deskclock.Utils
+import com.best.deskclock.events.Events
+import com.best.deskclock.settings.SettingsActivity
+import com.best.deskclock.timer.TimerKlaxon
+import com.best.deskclock.timer.TimerService
 
 /**
  * All [Timer] data is accessed via this model.

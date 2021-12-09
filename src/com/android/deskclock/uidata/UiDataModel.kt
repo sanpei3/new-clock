@@ -22,12 +22,12 @@ import android.graphics.Typeface
 import androidx.annotation.DrawableRes
 import androidx.annotation.StringRes
 
-import com.android.deskclock.AlarmClockFragment
-import com.android.deskclock.ClockFragment
-import com.android.deskclock.R
-import com.android.deskclock.Utils
-import com.android.deskclock.stopwatch.StopwatchFragment
-import com.android.deskclock.timer.TimerFragment
+import com.best.deskclock.AlarmClockFragment
+import com.best.deskclock.ClockFragment
+import com.best.deskclock.R
+import com.best.deskclock.Utils
+import com.best.deskclock.stopwatch.StopwatchFragment
+import com.best.deskclock.timer.TimerFragment
 
 /**
  * All application-wide user interface data is accessible through this singleton.

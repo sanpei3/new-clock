@@ -20,8 +20,8 @@ import android.content.Context
 import android.content.res.Resources
 import android.os.Bundle
 
-import com.android.deskclock.R
-import com.android.deskclock.Utils
+import com.best.deskclock.R
+import com.best.deskclock.Utils
 
 object WidgetUtils {
     // Calculate the scale factor of the fonts in the widget

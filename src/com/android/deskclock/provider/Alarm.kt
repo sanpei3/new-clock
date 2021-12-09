@@ -29,12 +29,12 @@ import android.os.Parcelable
 import android.provider.BaseColumns
 import androidx.loader.content.CursorLoader
 
-import com.android.deskclock.R
-import com.android.deskclock.data.DataModel
-import com.android.deskclock.data.Weekdays
-import com.android.deskclock.provider.ClockContract.AlarmSettingColumns
-import com.android.deskclock.provider.ClockContract.AlarmsColumns
-import com.android.deskclock.provider.ClockContract.InstancesColumns
+import com.best.deskclock.R
+import com.best.deskclock.data.DataModel
+import com.best.deskclock.data.Weekdays
+import com.best.deskclock.provider.ClockContract.AlarmSettingColumns
+import com.best.deskclock.provider.ClockContract.AlarmsColumns
+import com.best.deskclock.provider.ClockContract.InstancesColumns
 
 import java.util.Calendar
 import java.util.LinkedList

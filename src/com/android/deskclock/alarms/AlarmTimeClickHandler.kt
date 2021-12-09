@@ -22,18 +22,18 @@ import android.os.Bundle
 import android.os.Vibrator
 import androidx.fragment.app.Fragment
 
-import com.android.deskclock.AlarmClockFragment
-import com.android.deskclock.LabelDialogFragment
-import com.android.deskclock.LogUtils
-import com.android.deskclock.R
-import com.android.deskclock.alarms.dataadapter.AlarmItemHolder
-import com.android.deskclock.data.DataModel
-import com.android.deskclock.data.Weekdays
-import com.android.deskclock.events.Events
-import com.android.deskclock.provider.Alarm
-import com.android.deskclock.provider.AlarmInstance
-import com.android.deskclock.provider.ClockContract.InstancesColumns
-import com.android.deskclock.ringtone.RingtonePickerActivity
+import com.best.deskclock.AlarmClockFragment
+import com.best.deskclock.LabelDialogFragment
+import com.best.deskclock.LogUtils
+import com.best.deskclock.R
+import com.best.deskclock.alarms.dataadapter.AlarmItemHolder
+import com.best.deskclock.data.DataModel
+import com.best.deskclock.data.Weekdays
+import com.best.deskclock.events.Events
+import com.best.deskclock.provider.Alarm
+import com.best.deskclock.provider.AlarmInstance
+import com.best.deskclock.provider.ClockContract.InstancesColumns
+import com.best.deskclock.ringtone.RingtonePickerActivity
 
 import java.util.Calendar
 

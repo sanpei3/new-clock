@@ -52,14 +52,14 @@ import android.widget.RemoteViews
 import android.widget.TextClock
 import android.widget.TextView
 
-import com.android.deskclock.DeskClock
-import com.android.deskclock.LogUtils
-import com.android.deskclock.R
-import com.android.deskclock.Utils
-import com.android.deskclock.alarms.AlarmStateManager
-import com.android.deskclock.data.DataModel
-import com.android.deskclock.uidata.UiDataModel
-import com.android.deskclock.worldclock.CitySelectionActivity
+import com.best.deskclock.DeskClock
+import com.best.deskclock.LogUtils
+import com.best.deskclock.R
+import com.best.deskclock.Utils
+import com.best.deskclock.alarms.AlarmStateManager
+import com.best.deskclock.data.DataModel
+import com.best.deskclock.uidata.UiDataModel
+import com.best.deskclock.worldclock.CitySelectionActivity
 
 import java.util.Calendar
 import java.util.Date
@@ -286,7 +286,7 @@ class DigitalAppWidgetProvider : AppWidgetProvider() {
          * the default TimeZone changes days. This affects the widget display because the day-of-week is
          * only visible when the world city day-of-week differs from the default TimeZone's day-of-week.
          */
-        private const val ACTION_ON_DAY_CHANGE = "com.android.deskclock.ON_DAY_CHANGE"
+        private const val ACTION_ON_DAY_CHANGE = "com.best.deskclock.ON_DAY_CHANGE"
 
         /** Intent used to deliver the [.ACTION_ON_DAY_CHANGE] callback.  */
         private val DAY_CHANGE_INTENT: Intent = Intent(ACTION_ON_DAY_CHANGE)

@@ -43,21 +43,21 @@ import androidx.loader.content.Loader
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 
-import com.android.deskclock.BaseActivity
-import com.android.deskclock.DropShadowController
-import com.android.deskclock.LogUtils
-import com.android.deskclock.R
-import com.android.deskclock.RingtonePreviewKlaxon
-import com.android.deskclock.ItemAdapter
-import com.android.deskclock.ItemAdapter.ItemHolder
-import com.android.deskclock.ItemAdapter.ItemViewHolder
-import com.android.deskclock.ItemAdapter.OnItemClickedListener
-import com.android.deskclock.actionbarmenu.MenuItemControllerFactory
-import com.android.deskclock.actionbarmenu.NavUpMenuItemController
-import com.android.deskclock.actionbarmenu.OptionsMenuManager
-import com.android.deskclock.alarms.AlarmUpdateHandler
-import com.android.deskclock.data.DataModel
-import com.android.deskclock.provider.Alarm
+import com.best.deskclock.BaseActivity
+import com.best.deskclock.DropShadowController
+import com.best.deskclock.LogUtils
+import com.best.deskclock.R
+import com.best.deskclock.RingtonePreviewKlaxon
+import com.best.deskclock.ItemAdapter
+import com.best.deskclock.ItemAdapter.ItemHolder
+import com.best.deskclock.ItemAdapter.ItemViewHolder
+import com.best.deskclock.ItemAdapter.OnItemClickedListener
+import com.best.deskclock.actionbarmenu.MenuItemControllerFactory
+import com.best.deskclock.actionbarmenu.NavUpMenuItemController
+import com.best.deskclock.actionbarmenu.OptionsMenuManager
+import com.best.deskclock.alarms.AlarmUpdateHandler
+import com.best.deskclock.data.DataModel
+import com.best.deskclock.provider.Alarm
 
 /**
  * This activity presents a set of ringtones from which the user may select one. The set includes:

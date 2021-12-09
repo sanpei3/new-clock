@@ -31,15 +31,15 @@ import androidx.core.app.NotificationCompat
 import androidx.core.app.NotificationManagerCompat
 import androidx.core.content.ContextCompat
 
-import com.android.deskclock.AlarmClockFragment
-import com.android.deskclock.AlarmUtils
-import com.android.deskclock.DeskClock
-import com.android.deskclock.LogUtils
-import com.android.deskclock.provider.Alarm
-import com.android.deskclock.provider.AlarmInstance
-import com.android.deskclock.provider.ClockContract.InstancesColumns
-import com.android.deskclock.R
-import com.android.deskclock.Utils
+import com.best.deskclock.AlarmClockFragment
+import com.best.deskclock.AlarmUtils
+import com.best.deskclock.DeskClock
+import com.best.deskclock.LogUtils
+import com.best.deskclock.provider.Alarm
+import com.best.deskclock.provider.AlarmInstance
+import com.best.deskclock.provider.ClockContract.InstancesColumns
+import com.best.deskclock.R
+import com.best.deskclock.Utils
 
 import java.text.DateFormat
 import java.text.SimpleDateFormat
@@ -80,31 +80,31 @@ internal object AlarmNotifications {
 
     /**
      * This value is coordinated with group ids from
-     * [com.android.deskclock.data.NotificationModel]
+     * [com.best.deskclock.data.NotificationModel]
      */
     private const val UPCOMING_GROUP_KEY = "1"
 
     /**
      * This value is coordinated with group ids from
-     * [com.android.deskclock.data.NotificationModel]
+     * [com.best.deskclock.data.NotificationModel]
      */
     private const val MISSED_GROUP_KEY = "4"
 
     /**
      * This value is coordinated with notification ids from
-     * [com.android.deskclock.data.NotificationModel]
+     * [com.best.deskclock.data.NotificationModel]
      */
     private const val ALARM_GROUP_NOTIFICATION_ID = Int.MAX_VALUE - 4
 
     /**
      * This value is coordinated with notification ids from
-     * [com.android.deskclock.data.NotificationModel]
+     * [com.best.deskclock.data.NotificationModel]
      */
     private const val ALARM_GROUP_MISSED_NOTIFICATION_ID = Int.MAX_VALUE - 5
 
     /**
      * This value is coordinated with notification ids from
-     * [com.android.deskclock.data.NotificationModel]
+     * [com.best.deskclock.data.NotificationModel]
      */
     private const val ALARM_FIRING_NOTIFICATION_ID = Int.MAX_VALUE - 7
 

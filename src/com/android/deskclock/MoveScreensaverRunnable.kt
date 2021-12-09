@@ -24,7 +24,7 @@ import android.view.animation.AccelerateInterpolator
 import android.view.animation.DecelerateInterpolator
 import android.view.animation.Interpolator
 
-import com.android.deskclock.uidata.UiDataModel
+import com.best.deskclock.uidata.UiDataModel
 
 import kotlin.math.min
 

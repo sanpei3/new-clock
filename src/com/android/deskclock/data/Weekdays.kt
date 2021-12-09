@@ -19,7 +19,7 @@ package com.best.deskclock.data
 import android.content.Context
 import androidx.annotation.VisibleForTesting
 
-import com.android.deskclock.R
+import com.best.deskclock.R
 
 import java.text.DateFormatSymbols
 import java.util.Calendar

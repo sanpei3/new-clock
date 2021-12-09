@@ -34,10 +34,10 @@ import androidx.core.app.NotificationCompat.Builder
 import androidx.core.app.NotificationManagerCompat
 import androidx.core.content.ContextCompat
 
-import com.android.deskclock.R
-import com.android.deskclock.Utils
-import com.android.deskclock.events.Events
-import com.android.deskclock.stopwatch.StopwatchService
+import com.best.deskclock.R
+import com.best.deskclock.Utils
+import com.best.deskclock.events.Events
+import com.best.deskclock.stopwatch.StopwatchService
 
 /**
  * Builds notification to reflect the latest state of the stopwatch and recorded laps.

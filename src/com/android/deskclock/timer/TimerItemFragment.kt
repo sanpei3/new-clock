@@ -22,12 +22,12 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 
-import com.android.deskclock.LabelDialogFragment
-import com.android.deskclock.R
-import com.android.deskclock.data.DataModel
-import com.android.deskclock.data.Timer
-import com.android.deskclock.data.TimerStringFormatter
-import com.android.deskclock.events.Events
+import com.best.deskclock.LabelDialogFragment
+import com.best.deskclock.R
+import com.best.deskclock.data.DataModel
+import com.best.deskclock.data.Timer
+import com.best.deskclock.data.TimerStringFormatter
+import com.best.deskclock.events.Events
 
 /** The public no-arg constructor required by all fragments.  */
 class TimerItemFragment : Fragment() {

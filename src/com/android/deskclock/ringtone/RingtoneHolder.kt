@@ -19,9 +19,9 @@ package com.best.deskclock.ringtone
 import android.net.Uri
 import androidx.recyclerview.widget.RecyclerView.NO_ID
 
-import com.android.deskclock.ItemAdapter.ItemHolder
-import com.android.deskclock.Utils
-import com.android.deskclock.data.DataModel
+import com.best.deskclock.ItemAdapter.ItemHolder
+import com.best.deskclock.Utils
+import com.best.deskclock.data.DataModel
 
 internal abstract class RingtoneHolder @JvmOverloads constructor(
     uri: Uri,

@@ -16,7 +16,7 @@
 
 package com.best.deskclock.ringtone
 
-import com.android.deskclock.data.CustomRingtone
+import com.best.deskclock.data.CustomRingtone
 
 internal class CustomRingtoneHolder(ringtone: CustomRingtone)
     : RingtoneHolder(ringtone.uri, ringtone.title, ringtone.hasPermissions()) {

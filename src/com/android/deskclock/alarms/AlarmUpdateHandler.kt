@@ -22,12 +22,12 @@ import android.os.AsyncTask
 import android.text.format.DateFormat
 import android.view.ViewGroup
 
-import com.android.deskclock.AlarmUtils
-import com.android.deskclock.R
-import com.android.deskclock.events.Events
-import com.android.deskclock.provider.Alarm
-import com.android.deskclock.provider.AlarmInstance
-import com.android.deskclock.widget.toast.SnackbarManager
+import com.best.deskclock.AlarmUtils
+import com.best.deskclock.R
+import com.best.deskclock.events.Events
+import com.best.deskclock.provider.Alarm
+import com.best.deskclock.provider.AlarmInstance
+import com.best.deskclock.widget.toast.SnackbarManager
 
 import com.google.android.material.snackbar.Snackbar
 

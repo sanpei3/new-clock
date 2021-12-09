@@ -16,7 +16,7 @@
 
 package com.best.deskclock.data
 
-import com.android.deskclock.data.DataModel.SilentSetting
+import com.best.deskclock.data.DataModel.SilentSetting
 
 /**
  * The interface through which interested parties are notified of changes to device settings that

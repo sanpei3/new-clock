@@ -35,19 +35,19 @@ import android.text.format.DateFormat
 import android.widget.Toast
 import androidx.core.app.NotificationManagerCompat
 
-import com.android.deskclock.AlarmAlertWakeLock
-import com.android.deskclock.AlarmClockFragment
-import com.android.deskclock.AlarmUtils
-import com.android.deskclock.AsyncHandler
-import com.android.deskclock.DeskClock
-import com.android.deskclock.data.DataModel
-import com.android.deskclock.events.Events
-import com.android.deskclock.LogUtils
-import com.android.deskclock.provider.Alarm
-import com.android.deskclock.provider.AlarmInstance
-import com.android.deskclock.provider.ClockContract.InstancesColumns
-import com.android.deskclock.R
-import com.android.deskclock.Utils
+import com.best.deskclock.AlarmAlertWakeLock
+import com.best.deskclock.AlarmClockFragment
+import com.best.deskclock.AlarmUtils
+import com.best.deskclock.AsyncHandler
+import com.best.deskclock.DeskClock
+import com.best.deskclock.data.DataModel
+import com.best.deskclock.events.Events
+import com.best.deskclock.LogUtils
+import com.best.deskclock.provider.Alarm
+import com.best.deskclock.provider.AlarmInstance
+import com.best.deskclock.provider.ClockContract.InstancesColumns
+import com.best.deskclock.R
+import com.best.deskclock.Utils
 
 import java.util.Calendar
 
@@ -159,7 +159,7 @@ class AlarmStateManager : BroadcastReceiver() {
         private const val INDICATOR_ACTION = "indicator"
 
         // System intent action to notify AppWidget that we changed the alarm text.
-        const val ACTION_ALARM_CHANGED = "com.android.deskclock.ALARM_CHANGED"
+        const val ACTION_ALARM_CHANGED = "com.best.deskclock.ALARM_CHANGED"
 
         // Extra key to set the desired state change.
         const val ALARM_STATE_EXTRA = "intent.extra.alarm.state"

@@ -31,15 +31,15 @@ import androidx.preference.PreferenceDialogFragmentCompat
 import androidx.preference.PreferenceFragmentCompat
 import androidx.preference.TwoStatePreference
 
-import com.android.deskclock.BaseActivity
-import com.android.deskclock.DropShadowController
-import com.android.deskclock.R
-import com.android.deskclock.Utils
-import com.android.deskclock.actionbarmenu.MenuItemControllerFactory
-import com.android.deskclock.actionbarmenu.NavUpMenuItemController
-import com.android.deskclock.actionbarmenu.OptionsMenuManager
-import com.android.deskclock.data.DataModel
-import com.android.deskclock.ringtone.RingtonePickerActivity
+import com.best.deskclock.BaseActivity
+import com.best.deskclock.DropShadowController
+import com.best.deskclock.R
+import com.best.deskclock.Utils
+import com.best.deskclock.actionbarmenu.MenuItemControllerFactory
+import com.best.deskclock.actionbarmenu.NavUpMenuItemController
+import com.best.deskclock.actionbarmenu.OptionsMenuManager
+import com.best.deskclock.data.DataModel
+import com.best.deskclock.ringtone.RingtonePickerActivity
 
 /**
  * Settings for the Alarm Clock.

@@ -52,18 +52,18 @@ import android.widget.TextView
 import androidx.core.graphics.ColorUtils
 import androidx.core.view.animation.PathInterpolatorCompat
 
-import com.android.deskclock.AnimatorUtils
-import com.android.deskclock.BaseActivity
-import com.android.deskclock.LogUtils
-import com.android.deskclock.data.DataModel
-import com.android.deskclock.data.DataModel.AlarmVolumeButtonBehavior
-import com.android.deskclock.events.Events
-import com.android.deskclock.provider.AlarmInstance
-import com.android.deskclock.provider.ClockContract.InstancesColumns
-import com.android.deskclock.R
-import com.android.deskclock.ThemeUtils
-import com.android.deskclock.Utils
-import com.android.deskclock.widget.CircleView
+import com.best.deskclock.AnimatorUtils
+import com.best.deskclock.BaseActivity
+import com.best.deskclock.LogUtils
+import com.best.deskclock.data.DataModel
+import com.best.deskclock.data.DataModel.AlarmVolumeButtonBehavior
+import com.best.deskclock.events.Events
+import com.best.deskclock.provider.AlarmInstance
+import com.best.deskclock.provider.ClockContract.InstancesColumns
+import com.best.deskclock.R
+import com.best.deskclock.ThemeUtils
+import com.best.deskclock.Utils
+import com.best.deskclock.widget.CircleView
 
 import kotlin.math.max
 import kotlin.math.sqrt

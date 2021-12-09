@@ -28,11 +28,11 @@ import android.widget.ImageView
 import android.widget.TextView
 import androidx.core.content.ContextCompat
 
-import com.android.deskclock.AnimatorUtils
-import com.android.deskclock.ItemAdapter.ItemViewHolder
-import com.android.deskclock.R
-import com.android.deskclock.ThemeUtils
-import com.android.deskclock.Utils
+import com.best.deskclock.AnimatorUtils
+import com.best.deskclock.ItemAdapter.ItemViewHolder
+import com.best.deskclock.R
+import com.best.deskclock.ThemeUtils
+import com.best.deskclock.Utils
 
 internal class RingtoneViewHolder private constructor(itemView: View)
     : ItemViewHolder<RingtoneHolder>(itemView), View.OnClickListener, OnCreateContextMenuListener {

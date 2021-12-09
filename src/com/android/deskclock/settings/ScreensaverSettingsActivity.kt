@@ -25,8 +25,8 @@ import androidx.preference.ListPreference
 import androidx.preference.Preference
 import androidx.preference.PreferenceFragmentCompat
 
-import com.android.deskclock.R
-import com.android.deskclock.Utils
+import com.best.deskclock.R
+import com.best.deskclock.Utils
 
 /**
  * Settings for Clock screen saver

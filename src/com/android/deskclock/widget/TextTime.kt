@@ -27,8 +27,8 @@ import android.util.AttributeSet
 import android.widget.TextView
 import androidx.annotation.VisibleForTesting
 
-import com.android.deskclock.Utils
-import com.android.deskclock.data.DataModel
+import com.best.deskclock.Utils
+import com.best.deskclock.data.DataModel
 
 import java.util.Calendar
 import java.util.TimeZone

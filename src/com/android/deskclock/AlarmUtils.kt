@@ -22,9 +22,9 @@ import android.view.View
 import android.widget.Toast
 import androidx.annotation.VisibleForTesting
 
-import com.android.deskclock.provider.AlarmInstance
-import com.android.deskclock.widget.toast.SnackbarManager
-import com.android.deskclock.widget.toast.ToastManager
+import com.best.deskclock.provider.AlarmInstance
+import com.best.deskclock.widget.toast.SnackbarManager
+import com.best.deskclock.widget.toast.ToastManager
 
 import com.google.android.material.snackbar.Snackbar
 

@@ -25,8 +25,8 @@ import android.os.Looper
 import android.text.format.DateUtils
 import androidx.annotation.VisibleForTesting
 
-import com.android.deskclock.LogUtils
-import com.android.deskclock.Utils
+import com.best.deskclock.LogUtils
+import com.best.deskclock.Utils
 
 import java.util.concurrent.CopyOnWriteArrayList
 import java.util.Calendar

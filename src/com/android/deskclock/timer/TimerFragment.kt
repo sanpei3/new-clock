@@ -36,18 +36,18 @@ import android.widget.ImageView
 import androidx.annotation.VisibleForTesting
 import androidx.viewpager.widget.ViewPager
 
-import com.android.deskclock.data.DataModel
-import com.android.deskclock.data.Timer
-import com.android.deskclock.data.TimerListener
-import com.android.deskclock.data.TimerStringFormatter
-import com.android.deskclock.events.Events
-import com.android.deskclock.uidata.UiDataModel
-import com.android.deskclock.AnimatorUtils
-import com.android.deskclock.DeskClock
-import com.android.deskclock.DeskClockFragment
-import com.android.deskclock.FabContainer
-import com.android.deskclock.R
-import com.android.deskclock.Utils
+import com.best.deskclock.data.DataModel
+import com.best.deskclock.data.Timer
+import com.best.deskclock.data.TimerListener
+import com.best.deskclock.data.TimerStringFormatter
+import com.best.deskclock.events.Events
+import com.best.deskclock.uidata.UiDataModel
+import com.best.deskclock.AnimatorUtils
+import com.best.deskclock.DeskClock
+import com.best.deskclock.DeskClockFragment
+import com.best.deskclock.FabContainer
+import com.best.deskclock.R
+import com.best.deskclock.Utils
 
 import java.io.Serializable
 import kotlin.math.max
@@ -680,7 +680,7 @@ class TimerFragment : DeskClockFragment(UiDataModel.Tab.TIMERS) {
     }
 
     companion object {
-        private const val EXTRA_TIMER_SETUP = "com.android.deskclock.action.TIMER_SETUP"
+        private const val EXTRA_TIMER_SETUP = "com.best.deskclock.action.TIMER_SETUP"
 
         private const val KEY_TIMER_SETUP_STATE = "timer_setup_input"
 

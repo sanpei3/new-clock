@@ -16,7 +16,7 @@
 
 package com.best.deskclock.data
 
-import com.android.deskclock.Utils
+import com.best.deskclock.Utils
 
 import kotlin.math.max
 

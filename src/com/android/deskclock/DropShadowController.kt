@@ -22,9 +22,9 @@ import android.widget.AbsListView
 import android.widget.ListView
 import androidx.recyclerview.widget.RecyclerView
 
-import com.android.deskclock.data.DataModel
-import com.android.deskclock.uidata.TabScrollListener
-import com.android.deskclock.uidata.UiDataModel
+import com.best.deskclock.data.DataModel
+import com.best.deskclock.uidata.TabScrollListener
+import com.best.deskclock.uidata.UiDataModel
 
 /**
  * This controller encapsulates the logic that watches a model for changes to scroll state and

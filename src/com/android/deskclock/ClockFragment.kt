@@ -39,12 +39,12 @@ import android.widget.TextView
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 
-import com.android.deskclock.data.City
-import com.android.deskclock.data.CityListener
-import com.android.deskclock.data.DataModel
-import com.android.deskclock.events.Events
-import com.android.deskclock.uidata.UiDataModel
-import com.android.deskclock.worldclock.CitySelectionActivity
+import com.best.deskclock.data.City
+import com.best.deskclock.data.CityListener
+import com.best.deskclock.data.DataModel
+import com.best.deskclock.events.Events
+import com.best.deskclock.uidata.UiDataModel
+import com.best.deskclock.worldclock.CitySelectionActivity
 
 import java.util.Calendar
 import java.util.TimeZone

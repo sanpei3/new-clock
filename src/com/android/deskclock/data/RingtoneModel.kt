@@ -37,9 +37,9 @@ import android.provider.Settings
 import android.util.ArrayMap
 import android.util.ArraySet
 
-import com.android.deskclock.LogUtils
-import com.android.deskclock.R
-import com.android.deskclock.provider.ClockContract.AlarmSettingColumns
+import com.best.deskclock.LogUtils
+import com.best.deskclock.R
+import com.best.deskclock.provider.ClockContract.AlarmSettingColumns
 
 /**
  * All ringtone data is accessed via this model.

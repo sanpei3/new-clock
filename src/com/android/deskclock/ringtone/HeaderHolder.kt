@@ -20,7 +20,7 @@ import android.net.Uri
 import androidx.annotation.StringRes
 import androidx.recyclerview.widget.RecyclerView.NO_ID
 
-import com.android.deskclock.ItemAdapter.ItemHolder
+import com.best.deskclock.ItemAdapter.ItemHolder
 
 internal class HeaderHolder(
     @field:StringRes @get:StringRes

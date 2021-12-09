@@ -23,12 +23,12 @@ import android.media.RingtoneManager
 import android.net.Uri
 import androidx.loader.content.AsyncTaskLoader
 
-import com.android.deskclock.ItemAdapter.ItemHolder
-import com.android.deskclock.LogUtils
-import com.android.deskclock.R
-import com.android.deskclock.Utils
-import com.android.deskclock.data.CustomRingtone
-import com.android.deskclock.data.DataModel
+import com.best.deskclock.ItemAdapter.ItemHolder
+import com.best.deskclock.LogUtils
+import com.best.deskclock.R
+import com.best.deskclock.Utils
+import com.best.deskclock.data.CustomRingtone
+import com.best.deskclock.data.DataModel
 
 /**
  * Assembles the list of ItemHolders that back the RecyclerView used to choose a ringtone.

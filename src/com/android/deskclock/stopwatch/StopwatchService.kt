@@ -20,11 +20,11 @@ import android.app.Service
 import android.content.Intent
 import android.os.IBinder
 
-import com.android.deskclock.DeskClock
-import com.android.deskclock.R
-import com.android.deskclock.data.DataModel
-import com.android.deskclock.events.Events
-import com.android.deskclock.uidata.UiDataModel
+import com.best.deskclock.DeskClock
+import com.best.deskclock.R
+import com.best.deskclock.data.DataModel
+import com.best.deskclock.events.Events
+import com.best.deskclock.uidata.UiDataModel
 
 /**
  * This service exists solely to allow the stopwatch notification to alter the state of the
@@ -72,7 +72,7 @@ class StopwatchService : Service() {
     }
 
     companion object {
-        private const val ACTION_PREFIX = "com.android.deskclock.action."
+        private const val ACTION_PREFIX = "com.best.deskclock.action."
 
         // shows the tab with the stopwatch
         const val ACTION_SHOW_STOPWATCH = ACTION_PREFIX + "SHOW_STOPWATCH"

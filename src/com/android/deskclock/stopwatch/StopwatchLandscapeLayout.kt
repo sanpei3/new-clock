@@ -24,7 +24,7 @@ import android.view.View.MeasureSpec.EXACTLY
 import android.view.View.MeasureSpec.UNSPECIFIED
 import android.view.ViewGroup
 
-import com.android.deskclock.R
+import com.best.deskclock.R
 
 import kotlin.math.max
 

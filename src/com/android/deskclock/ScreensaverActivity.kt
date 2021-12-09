@@ -34,8 +34,8 @@ import android.view.Window
 import android.view.WindowManager
 import android.widget.TextClock
 
-import com.android.deskclock.events.Events
-import com.android.deskclock.uidata.UiDataModel
+import com.best.deskclock.events.Events
+import com.best.deskclock.uidata.UiDataModel
 
 class ScreensaverActivity : BaseActivity() {
     private val mStartPositionUpdater: OnPreDrawListener = StartPositionUpdater()

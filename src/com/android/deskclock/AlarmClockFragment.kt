@@ -33,21 +33,21 @@ import androidx.loader.content.Loader
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 
-import com.android.deskclock.ItemAdapter.ItemHolder
-import com.android.deskclock.ItemAdapter.OnItemChangedListener
-import com.android.deskclock.alarms.AlarmTimeClickHandler
-import com.android.deskclock.alarms.AlarmUpdateHandler
-import com.android.deskclock.alarms.ScrollHandler
-import com.android.deskclock.alarms.TimePickerDialogFragment
-import com.android.deskclock.alarms.dataadapter.AlarmItemHolder
-import com.android.deskclock.alarms.dataadapter.CollapsedAlarmViewHolder
-import com.android.deskclock.alarms.dataadapter.ExpandedAlarmViewHolder
-import com.android.deskclock.provider.Alarm
-import com.android.deskclock.provider.AlarmInstance
-import com.android.deskclock.uidata.UiDataModel
-import com.android.deskclock.widget.EmptyViewController
-import com.android.deskclock.widget.toast.SnackbarManager
-import com.android.deskclock.widget.toast.ToastManager
+import com.best.deskclock.ItemAdapter.ItemHolder
+import com.best.deskclock.ItemAdapter.OnItemChangedListener
+import com.best.deskclock.alarms.AlarmTimeClickHandler
+import com.best.deskclock.alarms.AlarmUpdateHandler
+import com.best.deskclock.alarms.ScrollHandler
+import com.best.deskclock.alarms.TimePickerDialogFragment
+import com.best.deskclock.alarms.dataadapter.AlarmItemHolder
+import com.best.deskclock.alarms.dataadapter.CollapsedAlarmViewHolder
+import com.best.deskclock.alarms.dataadapter.ExpandedAlarmViewHolder
+import com.best.deskclock.provider.Alarm
+import com.best.deskclock.provider.AlarmInstance
+import com.best.deskclock.uidata.UiDataModel
+import com.best.deskclock.widget.EmptyViewController
+import com.best.deskclock.widget.toast.SnackbarManager
+import com.best.deskclock.widget.toast.ToastManager
 
 import com.google.android.material.snackbar.Snackbar
 

@@ -19,7 +19,7 @@ package com.best.deskclock.ringtone
 import android.net.Uri
 import androidx.recyclerview.widget.RecyclerView.NO_ID
 
-import com.android.deskclock.ItemAdapter.ItemHolder
+import com.best.deskclock.ItemAdapter.ItemHolder
 
 internal class AddCustomRingtoneHolder : ItemHolder<Uri?>(null, NO_ID) {
     override fun getItemViewType(): Int {

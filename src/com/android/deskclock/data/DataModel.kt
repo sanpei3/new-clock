@@ -34,10 +34,10 @@ import android.view.View
 import androidx.annotation.Keep
 import androidx.annotation.StringRes
 
-import com.android.deskclock.Predicate
-import com.android.deskclock.R
-import com.android.deskclock.Utils
-import com.android.deskclock.timer.TimerService
+import com.best.deskclock.Predicate
+import com.best.deskclock.R
+import com.best.deskclock.Utils
+import com.best.deskclock.timer.TimerService
 
 import java.util.Calendar
 
@@ -1062,7 +1062,7 @@ class DataModel private constructor() {
     }
 
     companion object {
-        const val ACTION_WORLD_CITIES_CHANGED = "com.android.deskclock.WORLD_CITIES_CHANGED"
+        const val ACTION_WORLD_CITIES_CHANGED = "com.best.deskclock.WORLD_CITIES_CHANGED"
 
         /** The single instance of this data model that exists for the life of the application.  */
         val sDataModel = DataModel()

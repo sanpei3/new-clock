@@ -24,8 +24,8 @@ import android.widget.ArrayAdapter
 import androidx.core.content.ContextCompat
 import androidx.preference.DropDownPreference
 
-import com.android.deskclock.R
-import com.android.deskclock.Utils
+import com.best.deskclock.R
+import com.best.deskclock.Utils
 
 /**
  * Bend [DropDownPreference] to support

@@ -19,9 +19,9 @@ package com.best.deskclock.provider
 import android.net.Uri
 import android.provider.BaseColumns
 
-import com.android.deskclock.BuildConfig
-import com.android.deskclock.provider.ClockContract.AlarmsColumns
-import com.android.deskclock.provider.ClockContract.InstancesColumns
+import com.best.deskclock.BuildConfig
+import com.best.deskclock.provider.ClockContract.AlarmsColumns
+import com.best.deskclock.provider.ClockContract.InstancesColumns
 
 /**
  * The contract between the clock provider and desk clock. Contains
@@ -125,7 +125,7 @@ object ClockContract {
              *
              * Type: INTEGER
              *
-             * [com.android.deskclock.data.Weekdays]
+             * [com.best.deskclock.data.Weekdays]
              */
             const val DAYS_OF_WEEK = "daysofweek"
 

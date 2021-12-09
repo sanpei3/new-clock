@@ -23,9 +23,9 @@ import android.view.View
 import android.widget.Button
 import android.widget.ListView
 
-import com.android.deskclock.provider.Alarm
-import com.android.deskclock.widget.selector.AlarmSelection
-import com.android.deskclock.widget.selector.AlarmSelectionAdapter
+import com.best.deskclock.provider.Alarm
+import com.best.deskclock.widget.selector.AlarmSelection
+import com.best.deskclock.widget.selector.AlarmSelectionAdapter
 
 import java.util.Locale
 
@@ -98,7 +98,7 @@ class AlarmSelectionActivity : ListActivity() {
         /** Action used to signify alarm should be dismissed on selection.  */
         const val ACTION_DISMISS = 0
 
-        const val EXTRA_ACTION = "com.android.deskclock.EXTRA_ACTION"
-        const val EXTRA_ALARMS = "com.android.deskclock.EXTRA_ALARMS"
+        const val EXTRA_ACTION = "com.best.deskclock.EXTRA_ACTION"
+        const val EXTRA_ALARMS = "com.best.deskclock.EXTRA_ALARMS"
     }
 }

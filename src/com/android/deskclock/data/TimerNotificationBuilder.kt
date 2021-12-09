@@ -38,12 +38,12 @@ import androidx.core.app.NotificationCompat.Builder
 import androidx.core.app.NotificationManagerCompat
 import androidx.core.content.ContextCompat
 
-import com.android.deskclock.AlarmUtils
-import com.android.deskclock.R
-import com.android.deskclock.Utils
-import com.android.deskclock.events.Events
-import com.android.deskclock.timer.ExpiredTimersActivity
-import com.android.deskclock.timer.TimerService
+import com.best.deskclock.AlarmUtils
+import com.best.deskclock.R
+import com.best.deskclock.Utils
+import com.best.deskclock.events.Events
+import com.best.deskclock.timer.ExpiredTimersActivity
+import com.best.deskclock.timer.TimerService
 
 /**
  * Builds notifications to reflect the latest state of the timers.

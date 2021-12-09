@@ -22,8 +22,8 @@ import android.view.Menu
 import android.view.Menu.NONE
 import android.view.MenuItem
 
-import com.android.deskclock.R
-import com.android.deskclock.settings.SettingsActivity
+import com.best.deskclock.R
+import com.best.deskclock.settings.SettingsActivity
 
 /**
  * [MenuItemController] for settings menu.

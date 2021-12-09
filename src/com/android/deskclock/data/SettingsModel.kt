@@ -20,8 +20,8 @@ import android.content.Context
 import android.content.SharedPreferences
 import android.net.Uri
 
-import com.android.deskclock.R
-import com.android.deskclock.Utils
+import com.best.deskclock.R
+import com.best.deskclock.Utils
 
 import java.util.TimeZone
 

@@ -27,12 +27,12 @@ import android.os.IBinder
 import android.telephony.PhoneStateListener
 import android.telephony.TelephonyManager
 
-import com.android.deskclock.AlarmAlertWakeLock
-import com.android.deskclock.LogUtils
-import com.android.deskclock.R
-import com.android.deskclock.events.Events
-import com.android.deskclock.provider.AlarmInstance
-import com.android.deskclock.provider.ClockContract.InstancesColumns
+import com.best.deskclock.AlarmAlertWakeLock
+import com.best.deskclock.LogUtils
+import com.best.deskclock.R
+import com.best.deskclock.events.Events
+import com.best.deskclock.provider.AlarmInstance
+import com.best.deskclock.provider.ClockContract.InstancesColumns
 
 /**
  * This service is in charge of starting/stopping the alarm. It will bring up and manage the
@@ -227,19 +227,19 @@ class AlarmService : Service() {
          * so that other applications can snooze the alarm (after ALARM_ALERT_ACTION and before
          * ALARM_DONE_ACTION).
          */
-        const val ALARM_SNOOZE_ACTION = "com.android.deskclock.ALARM_SNOOZE"
+        const val ALARM_SNOOZE_ACTION = "com.best.deskclock.ALARM_SNOOZE"
 
         /**
          * AlarmActivity and AlarmService listen for this broadcast intent so that other
          * applications can dismiss the alarm (after ALARM_ALERT_ACTION and before ALARM_DONE_ACTION).
          */
-        const val ALARM_DISMISS_ACTION = "com.android.deskclock.ALARM_DISMISS"
+        const val ALARM_DISMISS_ACTION = "com.best.deskclock.ALARM_DISMISS"
 
         /** A public action sent by AlarmService when the alarm has started.  */
-        const val ALARM_ALERT_ACTION = "com.android.deskclock.ALARM_ALERT"
+        const val ALARM_ALERT_ACTION = "com.best.deskclock.ALARM_ALERT"
 
         /** A public action sent by AlarmService when the alarm has stopped for any reason.  */
-        const val ALARM_DONE_ACTION = "com.android.deskclock.ALARM_DONE"
+        const val ALARM_DONE_ACTION = "com.best.deskclock.ALARM_DONE"
 
         /** Private action used to stop an alarm with this service.  */
         const val STOP_ALARM_ACTION = "STOP_ALARM"

@@ -20,9 +20,9 @@ import android.app.Activity
 import android.content.Intent
 import android.os.Bundle
 
-import com.android.deskclock.events.Events
-import com.android.deskclock.stopwatch.StopwatchService
-import com.android.deskclock.uidata.UiDataModel
+import com.best.deskclock.events.Events
+import com.best.deskclock.stopwatch.StopwatchService
+import com.best.deskclock.uidata.UiDataModel
 
 class HandleShortcuts : Activity() {
     override fun onCreate(savedInstanceState: Bundle?) {
