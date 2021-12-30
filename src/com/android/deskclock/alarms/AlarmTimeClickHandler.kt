@@ -124,6 +124,16 @@ class AlarmTimeClickHandler(
         mAlarmUpdateHandler.asyncUpdateAlarm(alarm, popupToast, minorUpdate = false)
     }
 
+    fun setAlarmExcludeHolidaysEnabled(alarm: Alarm, isEnabled: Boolean) {
+        val now = Calendar.getInstance()
+        val oldNextAlarmTime = alarm.getNextAlarmTime(now)
+
+        // if the change altered the next scheduled alarm time, tell the user
+        val newNextAlarmTime = alarm.getNextAlarmTime(now)
+        val popupToast = oldNextAlarmTime != newNextAlarmTime
+        mAlarmUpdateHandler.asyncUpdateAlarm(alarm, popupToast, minorUpdate = false)
+    }
+
     fun setDayOfWeekEnabled(alarm: Alarm, checked: Boolean, index: Int) {
         val now = Calendar.getInstance()
         val oldNextAlarmTime = alarm.getNextAlarmTime(now)

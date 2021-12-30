@@ -34,6 +34,8 @@
 
     <!-- Setting labels on Set alarm screen: Repeat -->
     <string name="alarm_repeat">Repeat</string>
+    <!-- Setting labels on Set alarm screen: Repeat -->
+    <string name="alarm_exclude_holidays">Exclude Holidays</string>
 
     <!-- Setting labels on Set alarm screen: Delete [CHAR LIMIT=15] -->
     <string name="delete">Delete</string>

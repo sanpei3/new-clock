@@ -57,6 +57,7 @@ class ExpandedAlarmViewHolder private constructor(itemView: View, private val mH
     : AlarmItemViewHolder(itemView) {
     val repeat: CheckBox = itemView.findViewById(R.id.repeat_onoff) as CheckBox
     private val editLabel: TextView = itemView.findViewById(R.id.edit_label) as TextView
+    val excludeHolidays: CheckBox = itemView.findViewById(R.id.exclude_holiday_onoff) as CheckBox
     val repeatDays: LinearLayout = itemView.findViewById(R.id.repeat_days) as LinearLayout
     private val dayButtons: Array<CompoundButton?> = arrayOfNulls<CompoundButton>(7)
     val vibrate: CheckBox = itemView.findViewById(R.id.vibrate_onoff) as CheckBox
@@ -129,6 +130,11 @@ class ExpandedAlarmViewHolder private constructor(itemView: View, private val mH
             alarmTimeClickHandler.setAlarmRepeatEnabled(itemHolder!!.item, checked)
             itemHolder?.notifyItemChanged(ANIMATE_REPEAT_DAYS)
         }
+        // excludeHolidays checkbox handler
+        excludeHolidays.setOnClickListener { view ->
+            val checked: Boolean = (view as CheckBox).isChecked
+            alarmTimeClickHandler.setAlarmExcludeHolidaysEnabled(itemHolder!!.item, checked)
+        }
         // Day buttons handler
         for (i in dayButtons.indices) {
             dayButtons[i]?.setOnClickListener { view ->
@@ -182,9 +188,11 @@ class ExpandedAlarmViewHolder private constructor(itemView: View, private val mH
         }
         if (alarm.daysOfWeek.isRepeating) {
             repeat.isChecked = true
+            excludeHolidays.visibility = View.VISIBLE
             repeatDays.visibility = View.VISIBLE
         } else {
             repeat.isChecked = false
+            excludeHolidays.visibility = View.GONE
             repeatDays.visibility = View.GONE
         }
     }
@@ -333,6 +341,8 @@ class ExpandedAlarmViewHolder private constructor(itemView: View, private val mH
         val shortDuration = (duration * ANIM_SHORT_DURATION_MULTIPLIER).toLong()
         val repeatAnimation: Animator = ObjectAnimator.ofFloat(repeat, View.ALPHA, 0f)
                 .setDuration(shortDuration)
+        val excludeHolidaysAnimation: Animator = ObjectAnimator.ofFloat(excludeHolidays, View.ALPHA, 0f)
+            .setDuration(shortDuration)
         val editLabelAnimation: Animator = ObjectAnimator.ofFloat(editLabel, View.ALPHA, 0f)
                 .setDuration(shortDuration)
         val repeatDaysAnimation: Animator = ObjectAnimator.ofFloat(repeatDays, View.ALPHA, 0f)
@@ -371,9 +381,10 @@ class ExpandedAlarmViewHolder private constructor(itemView: View, private val mH
             startDelay += delayIncrement
         }
         repeatAnimation.setStartDelay(startDelay)
+        excludeHolidaysAnimation.setStartDelay(startDelay)
 
         val animatorSet = AnimatorSet()
-        animatorSet.playTogether(backgroundAnimator, boundsAnimator, repeatAnimation,
+        animatorSet.playTogether(backgroundAnimator, boundsAnimator, repeatAnimation, excludeHolidaysAnimation,
                 repeatDaysAnimation, vibrateAnimation, ringtoneAnimation, editLabelAnimation,
                 deleteAnimation, hairLineAnimation, dismissAnimation)
         return animatorSet
@@ -405,6 +416,8 @@ class ExpandedAlarmViewHolder private constructor(itemView: View, private val mH
         val longDuration = (duration * ANIM_LONG_DURATION_MULTIPLIER).toLong()
         val repeatAnimation: Animator = ObjectAnimator.ofFloat(repeat, View.ALPHA, 1f)
                 .setDuration(longDuration)
+        val excludeHolidaysAnimation: Animator = ObjectAnimator.ofFloat(excludeHolidays, View.ALPHA, 1f)
+            .setDuration(longDuration)
         val repeatDaysAnimation: Animator = ObjectAnimator.ofFloat(repeatDays, View.ALPHA, 1f)
                 .setDuration(longDuration)
         val ringtoneAnimation: Animator = ObjectAnimator.ofFloat(ringtone, View.ALPHA, 1f)
@@ -430,6 +443,7 @@ class ExpandedAlarmViewHolder private constructor(itemView: View, private val mH
         val delayIncrement = (duration * ANIM_SHORT_DELAY_INCREMENT_MULTIPLIER).toLong() /
                 (numberOfItems - 1)
         repeatAnimation.setStartDelay(startDelay)
+        excludeHolidaysAnimation.setStartDelay(startDelay)
         startDelay += delayIncrement
         val daysVisible = repeatDays.getVisibility() == View.VISIBLE
         if (daysVisible) {
@@ -449,7 +463,7 @@ class ExpandedAlarmViewHolder private constructor(itemView: View, private val mH
         deleteAnimation.setStartDelay(startDelay)
 
         val animatorSet = AnimatorSet()
-        animatorSet.playTogether(backgroundAnimator, repeatAnimation, boundsAnimator,
+        animatorSet.playTogether(backgroundAnimator, repeatAnimation, excludeHolidaysAnimation, boundsAnimator,
                 repeatDaysAnimation, vibrateAnimation, ringtoneAnimation, editLabelAnimation,
                 deleteAnimation, hairLineAnimation, dismissAnimation, arrowAnimation)
         animatorSet.addListener(object : AnimatorListenerAdapter() {
@@ -474,6 +488,7 @@ class ExpandedAlarmViewHolder private constructor(itemView: View, private val mH
 
     private fun setChangingViewsAlpha(alpha: Float) {
         repeat.alpha = alpha
+        excludeHolidays.alpha = alpha
         editLabel.alpha = alpha
         repeatDays.alpha = alpha
         vibrate.alpha = alpha
