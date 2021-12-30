@@ -13,7 +13,7 @@
  * License for the specific language governing permissions and limitations under
  * the License.
  */
-package com.android.alarmclock
+package com.best.alarmclock
 
 import android.annotation.SuppressLint
 import android.app.AlarmManager
