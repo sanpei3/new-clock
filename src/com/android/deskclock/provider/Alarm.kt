@@ -58,6 +58,9 @@ class Alarm : Parcelable, AlarmsColumns {
     var daysOfWeek: Weekdays
 
     @JvmField
+    var excludeHolidays = false
+
+    @JvmField
     var vibrate: Boolean
 
     @JvmField
@@ -80,6 +83,7 @@ class Alarm : Parcelable, AlarmsColumns {
         id = INVALID_ID
         this.hour = hour
         this.minutes = minutes
+        excludeHolidays = false
         vibrate = true
         daysOfWeek = Weekdays.NONE
         label = ""
@@ -93,6 +97,7 @@ class Alarm : Parcelable, AlarmsColumns {
         hour = c.getInt(HOUR_INDEX)
         minutes = c.getInt(MINUTES_INDEX)
         daysOfWeek = Weekdays.fromBits(c.getInt(DAYS_OF_WEEK_INDEX))
+        excludeHolidays = c.getInt(EXCLUDEHOLIDAYS_INDEX) == 1
         vibrate = c.getInt(VIBRATE_INDEX) == 1
         label = c.getString(LABEL_INDEX)
         deleteAfterUse = c.getInt(DELETE_AFTER_USE_INDEX) == 1
@@ -117,6 +122,7 @@ class Alarm : Parcelable, AlarmsColumns {
         hour = p.readInt()
         minutes = p.readInt()
         daysOfWeek = Weekdays.fromBits(p.readInt())
+        excludeHolidays = p.readInt() == 1
         vibrate = p.readInt() == 1
         label = p.readString()
         alert = p.readParcelable(null)
@@ -150,6 +156,7 @@ class Alarm : Parcelable, AlarmsColumns {
         p.writeInt(hour)
         p.writeInt(minutes)
         p.writeInt(daysOfWeek.bits)
+        p.writeInt(if (excludeHolidays) 1 else 0)
         p.writeInt(if (vibrate) 1 else 0)
         p.writeString(label)
         p.writeParcelable(alert, flags)
@@ -159,8 +166,9 @@ class Alarm : Parcelable, AlarmsColumns {
     override fun describeContents(): Int = 0
 
     fun createInstanceAfter(time: Calendar): AlarmInstance {
-        val nextInstanceTime = getNextAlarmTime(time)
+        val nextInstanceTime = getNextAlarmTime(time, excludeHolidays)
         val result = AlarmInstance(nextInstanceTime, id)
+        result.mExcludeHolidays = excludeHolidays
         result.mVibrate = vibrate
         result.mLabel = label
         result.mRingtone = alert
@@ -191,7 +199,7 @@ class Alarm : Parcelable, AlarmsColumns {
         }
     }
 
-    fun getNextAlarmTime(currentTime: Calendar): Calendar {
+    fun getNextAlarmTime(currentTime: Calendar, excludeHolidays: Boolean) : Calendar {
         val nextInstanceTime = Calendar.getInstance(currentTime.timeZone)
         nextInstanceTime[Calendar.YEAR] = currentTime[Calendar.YEAR]
         nextInstanceTime[Calendar.MONTH] = currentTime[Calendar.MONTH]
@@ -207,7 +215,7 @@ class Alarm : Parcelable, AlarmsColumns {
         }
 
         // The day of the week might be invalid, so find next valid one
-        val addDays = daysOfWeek.getDistanceToNextDay(nextInstanceTime)
+        val addDays = daysOfWeek.getDistanceToNextDay(nextInstanceTime, excludeHolidays)
         if (addDays > 0) {
             nextInstanceTime.add(Calendar.DAY_OF_WEEK, addDays)
         }
@@ -237,6 +245,7 @@ class Alarm : Parcelable, AlarmsColumns {
                 ", hour=" + hour +
                 ", minutes=" + minutes +
                 ", daysOfWeek=" + daysOfWeek +
+                ", excludeHolidays=" + excludeHolidays +
                 ", vibrate=" + vibrate +
                 ", label='" + label + '\'' +
                 ", deleteAfterUse=" + deleteAfterUse +
@@ -266,6 +275,7 @@ class Alarm : Parcelable, AlarmsColumns {
                 AlarmSettingColumns.VIBRATE,
                 AlarmSettingColumns.LABEL,
                 AlarmSettingColumns.RINGTONE,
+                AlarmSettingColumns.EXCLUDEHOLIDAYS,
                 AlarmsColumns.DELETE_AFTER_USE
         )
 
@@ -278,6 +288,7 @@ class Alarm : Parcelable, AlarmsColumns {
                 ClockDatabaseHelper.ALARMS_TABLE_NAME + "." + AlarmSettingColumns.VIBRATE,
                 ClockDatabaseHelper.ALARMS_TABLE_NAME + "." + AlarmSettingColumns.LABEL,
                 ClockDatabaseHelper.ALARMS_TABLE_NAME + "." + AlarmSettingColumns.RINGTONE,
+                ClockDatabaseHelper.ALARMS_TABLE_NAME + "." + AlarmSettingColumns.EXCLUDEHOLIDAYS,
                 ClockDatabaseHelper.ALARMS_TABLE_NAME + "." + AlarmsColumns.DELETE_AFTER_USE,
                 ClockDatabaseHelper.INSTANCES_TABLE_NAME + "." + InstancesColumns.ALARM_STATE,
                 ClockDatabaseHelper.INSTANCES_TABLE_NAME + "." + BaseColumns._ID,
@@ -287,7 +298,8 @@ class Alarm : Parcelable, AlarmsColumns {
                 ClockDatabaseHelper.INSTANCES_TABLE_NAME + "." + InstancesColumns.HOUR,
                 ClockDatabaseHelper.INSTANCES_TABLE_NAME + "." + InstancesColumns.MINUTES,
                 ClockDatabaseHelper.INSTANCES_TABLE_NAME + "." + AlarmSettingColumns.LABEL,
-                ClockDatabaseHelper.INSTANCES_TABLE_NAME + "." + AlarmSettingColumns.VIBRATE
+                ClockDatabaseHelper.INSTANCES_TABLE_NAME + "." + AlarmSettingColumns.VIBRATE,
+                ClockDatabaseHelper.INSTANCES_TABLE_NAME + "." + AlarmSettingColumns.EXCLUDEHOLIDAYS
         )
 
         /**
@@ -302,19 +314,21 @@ class Alarm : Parcelable, AlarmsColumns {
         private const val VIBRATE_INDEX = 5
         private const val LABEL_INDEX = 6
         private const val RINGTONE_INDEX = 7
-        private const val DELETE_AFTER_USE_INDEX = 8
-        private const val INSTANCE_STATE_INDEX = 9
-        const val INSTANCE_ID_INDEX = 10
-        const val INSTANCE_YEAR_INDEX = 11
-        const val INSTANCE_MONTH_INDEX = 12
-        const val INSTANCE_DAY_INDEX = 13
-        const val INSTANCE_HOUR_INDEX = 14
-        const val INSTANCE_MINUTE_INDEX = 15
-        const val INSTANCE_LABEL_INDEX = 16
-        const val INSTANCE_VIBRATE_INDEX = 17
+        private const val EXCLUDEHOLIDAYS_INDEX = 8
+        private const val DELETE_AFTER_USE_INDEX = 9
+        private const val INSTANCE_STATE_INDEX = 10
+        const val INSTANCE_ID_INDEX = 11
+        const val INSTANCE_YEAR_INDEX = 12
+        const val INSTANCE_MONTH_INDEX = 13
+        const val INSTANCE_DAY_INDEX = 14
+        const val INSTANCE_HOUR_INDEX = 15
+        const val INSTANCE_MINUTE_INDEX = 16
+        const val INSTANCE_LABEL_INDEX = 17
+        const val INSTANCE_VIBRATE_INDEX = 18
+        const val INSTANCE_EXCLUDEHOLIDAYS_INDEX = 19
 
         private const val COLUMN_COUNT = DELETE_AFTER_USE_INDEX + 1
-        private const val ALARM_JOIN_INSTANCE_COLUMN_COUNT = INSTANCE_VIBRATE_INDEX + 1
+        private const val ALARM_JOIN_INSTANCE_COLUMN_COUNT = INSTANCE_EXCLUDEHOLIDAYS_INDEX + 1
 
         @JvmStatic
         fun createContentValues(alarm: Alarm): ContentValues {
@@ -330,6 +344,7 @@ class Alarm : Parcelable, AlarmsColumns {
             values.put(AlarmSettingColumns.VIBRATE, if (alarm.vibrate) 1 else 0)
             values.put(AlarmSettingColumns.LABEL, alarm.label)
             values.put(AlarmsColumns.DELETE_AFTER_USE, alarm.deleteAfterUse)
+            values.put(AlarmSettingColumns.EXCLUDEHOLIDAYS, if (alarm.excludeHolidays) 1 else 0)
             if (alarm.alert == null) {
                 // We want to put null, so default alarm changes
                 values.putNull(AlarmSettingColumns.RINGTONE)

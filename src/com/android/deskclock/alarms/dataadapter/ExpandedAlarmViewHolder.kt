@@ -110,6 +110,11 @@ class ExpandedAlarmViewHolder private constructor(itemView: View, private val mH
         editLabel.setOnClickListener { _ ->
             alarmTimeClickHandler.onEditLabelClicked(itemHolder!!.item)
         }
+        // excludeHolidays checkbox handler
+        excludeHolidays.setOnClickListener { view ->
+            alarmTimeClickHandler.setAlarmExcludeHolidaysEnabled(itemHolder!!.item,
+                (view as CheckBox).isChecked)
+        }
         // Vibrator checkbox handler
         vibrate.setOnClickListener { view ->
             alarmTimeClickHandler.setAlarmVibrationEnabled(itemHolder!!.item,
@@ -130,11 +135,7 @@ class ExpandedAlarmViewHolder private constructor(itemView: View, private val mH
             alarmTimeClickHandler.setAlarmRepeatEnabled(itemHolder!!.item, checked)
             itemHolder?.notifyItemChanged(ANIMATE_REPEAT_DAYS)
         }
-        // excludeHolidays checkbox handler
-        excludeHolidays.setOnClickListener { view ->
-            val checked: Boolean = (view as CheckBox).isChecked
-            alarmTimeClickHandler.setAlarmExcludeHolidaysEnabled(itemHolder!!.item, checked)
-        }
+
         // Day buttons handler
         for (i in dayButtons.indices) {
             dayButtons[i]?.setOnClickListener { view ->

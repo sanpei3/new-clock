@@ -877,7 +877,7 @@ class AlarmStateManager : BroadcastReceiver() {
                 val missedTTLTime: Calendar = instance.missedTimeToLive
                 if (currentTime.before(priorAlarmTime) || currentTime.after(missedTTLTime)) {
                     val oldAlarmTime: Calendar = instance.alarmTime
-                    val newAlarmTime = alarm.getNextAlarmTime(currentTime)
+                    val newAlarmTime = alarm.getNextAlarmTime(currentTime, alarm.excludeHolidays)
                     val oldTime: CharSequence =
                             DateFormat.format("MM/dd/yyyy hh:mm a", oldAlarmTime)
                     val newTime: CharSequence =

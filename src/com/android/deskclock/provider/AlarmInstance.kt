@@ -54,6 +54,9 @@ class AlarmInstance : InstancesColumns {
     var mVibrate = false
 
     @JvmField
+    var mExcludeHolidays = false
+
+    @JvmField
     var mRingtone: Uri? = null
 
     @JvmField
@@ -71,6 +74,7 @@ class AlarmInstance : InstancesColumns {
         alarmTime = calendar
         mLabel = ""
         mVibrate = false
+        mExcludeHolidays = false
         mRingtone = null
         mAlarmState = InstancesColumns.SILENT_STATE
     }
@@ -84,6 +88,7 @@ class AlarmInstance : InstancesColumns {
         mMinute = instance.mMinute
         mLabel = instance.mLabel
         mVibrate = instance.mVibrate
+        mExcludeHolidays = instance.mExcludeHolidays
         mRingtone = instance.mRingtone
         mAlarmId = instance.mAlarmId
         mAlarmState = instance.mAlarmState
@@ -99,6 +104,7 @@ class AlarmInstance : InstancesColumns {
             mMinute = c.getInt(Alarm.INSTANCE_MINUTE_INDEX)
             mLabel = c.getString(Alarm.INSTANCE_LABEL_INDEX)
             mVibrate = c.getInt(Alarm.INSTANCE_VIBRATE_INDEX) == 1
+            mExcludeHolidays = c.getInt(Alarm.INSTANCE_EXCLUDEHOLIDAYS_INDEX) == 1
         } else {
             mId = c.getLong(ID_INDEX)
             mYear = c.getInt(YEAR_INDEX)
@@ -108,6 +114,7 @@ class AlarmInstance : InstancesColumns {
             mMinute = c.getInt(MINUTES_INDEX)
             mLabel = c.getString(LABEL_INDEX)
             mVibrate = c.getInt(VIBRATE_INDEX) == 1
+            mExcludeHolidays = c.getInt(EXCLUDEHOLIDAYS_INDEX) == 1
         }
         mRingtone = if (c.isNull(RINGTONE_INDEX)) {
             // Should we be saving this with the current ringtone or leave it null
@@ -232,6 +239,7 @@ class AlarmInstance : InstancesColumns {
                 ", mMinute=" + mMinute +
                 ", mLabel=" + mLabel +
                 ", mVibrate=" + mVibrate +
+                ", mExcludeHolidays=" + mExcludeHolidays +
                 ", mRingtone=" + mRingtone +
                 ", mAlarmId=" + mAlarmId +
                 ", mAlarmState=" + mAlarmState +
@@ -270,7 +278,8 @@ class AlarmInstance : InstancesColumns {
                 AlarmSettingColumns.VIBRATE,
                 AlarmSettingColumns.RINGTONE,
                 InstancesColumns.ALARM_ID,
-                InstancesColumns.ALARM_STATE
+                InstancesColumns.ALARM_STATE,
+                AlarmSettingColumns.EXCLUDEHOLIDAYS
         )
 
         /**
@@ -288,8 +297,9 @@ class AlarmInstance : InstancesColumns {
         private const val RINGTONE_INDEX = 8
         private const val ALARM_ID_INDEX = 9
         private const val ALARM_STATE_INDEX = 10
+        private const val EXCLUDEHOLIDAYS_INDEX = 11
 
-        private const val COLUMN_COUNT = ALARM_STATE_INDEX + 1
+        private const val COLUMN_COUNT = EXCLUDEHOLIDAYS_INDEX + 1
 
         @JvmStatic
         fun createContentValues(instance: AlarmInstance): ContentValues {
@@ -305,6 +315,7 @@ class AlarmInstance : InstancesColumns {
             values.put(InstancesColumns.MINUTES, instance.mMinute)
             values.put(AlarmSettingColumns.LABEL, instance.mLabel)
             values.put(AlarmSettingColumns.VIBRATE, if (instance.mVibrate) 1 else 0)
+            values.put(AlarmSettingColumns.EXCLUDEHOLIDAYS, if (instance.mExcludeHolidays) 1 else 0 )
             if (instance.mRingtone == null) {
                 // We want to put null in the database, so we'll be able
                 // to pick up on changes to the default alarm

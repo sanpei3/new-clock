@@ -56,6 +56,7 @@ class ClockDatabaseHelper(context: Context)
                 AlarmSettingColumns.VIBRATE + cs +
                 AlarmSettingColumns.LABEL + cs +
                 AlarmSettingColumns.RINGTONE + cs +
+                AlarmSettingColumns.EXCLUDEHOLIDAYS + cs +
                 AlarmsColumns.DELETE_AFTER_USE + ") VALUES "
         db.execSQL(insertMe + DEFAULT_ALARM_1)
         db.execSQL(insertMe + DEFAULT_ALARM_2)
@@ -190,10 +191,10 @@ class ClockDatabaseHelper(context: Context)
         private const val VERSION_8: Int = 8
 
         // This creates a default alarm at 8:30 for every Mon,Tue,Wed,Thu,Fri
-        private const val DEFAULT_ALARM_1: String = "(8, 30, 31, 0, 1, '', NULL, 0);"
+        private const val DEFAULT_ALARM_1: String = "(8, 30, 31, 0, 1, '', NULL, 0, 0);"
 
         // This creates a default alarm at 9:30 for every Sat,Sun
-        private const val DEFAULT_ALARM_2: String = "(9, 00, 96, 0, 1, '', NULL, 0);"
+        private const val DEFAULT_ALARM_2: String = "(9, 00, 96, 0, 1, '', NULL, 0, 0);"
 
         // Database and table names
         const val DATABASE_NAME: String = "alarms.db"
@@ -212,6 +213,7 @@ class ClockDatabaseHelper(context: Context)
                     AlarmSettingColumns.VIBRATE + " INTEGER NOT NULL, " +
                     AlarmSettingColumns.LABEL + " TEXT NOT NULL, " +
                     AlarmSettingColumns.RINGTONE + " TEXT, " +
+                    AlarmSettingColumns.EXCLUDEHOLIDAYS + " INTEGER NOT NULL, " +
                     AlarmsColumns.DELETE_AFTER_USE + " INTEGER NOT NULL DEFAULT 0);")
             LogUtils.i("Alarms Table created")
         }
@@ -228,6 +230,7 @@ class ClockDatabaseHelper(context: Context)
                     AlarmSettingColumns.LABEL + " TEXT NOT NULL, " +
                     AlarmSettingColumns.RINGTONE + " TEXT, " +
                     InstancesColumns.ALARM_STATE + " INTEGER NOT NULL, " +
+                    AlarmSettingColumns.EXCLUDEHOLIDAYS + " INTEGER NOT NULL, " +
                     InstancesColumns.ALARM_ID + " INTEGER REFERENCES " +
                     ALARMS_TABLE_NAME + "(" + BaseColumns._ID + ") " +
                     "ON UPDATE CASCADE ON DELETE CASCADE" +

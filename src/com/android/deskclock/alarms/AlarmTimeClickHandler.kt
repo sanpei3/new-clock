@@ -97,7 +97,7 @@ class AlarmTimeClickHandler(
 
     fun setAlarmRepeatEnabled(alarm: Alarm, isEnabled: Boolean) {
         val now = Calendar.getInstance()
-        val oldNextAlarmTime = alarm.getNextAlarmTime(now)
+        val oldNextAlarmTime = alarm.getNextAlarmTime(now, alarm.excludeHolidays)
         val alarmId = alarm.id.toString()
         if (isEnabled) {
             // Set all previously set days
@@ -118,31 +118,30 @@ class AlarmTimeClickHandler(
         }
 
         // if the change altered the next scheduled alarm time, tell the user
-        val newNextAlarmTime = alarm.getNextAlarmTime(now)
+        val newNextAlarmTime = alarm.getNextAlarmTime(now, alarm.excludeHolidays)
         val popupToast = oldNextAlarmTime != newNextAlarmTime
         Events.sendAlarmEvent(R.string.action_toggle_repeat_days, R.string.label_deskclock)
         mAlarmUpdateHandler.asyncUpdateAlarm(alarm, popupToast, minorUpdate = false)
     }
 
-    fun setAlarmExcludeHolidaysEnabled(alarm: Alarm, isEnabled: Boolean) {
-        val now = Calendar.getInstance()
-        val oldNextAlarmTime = alarm.getNextAlarmTime(now)
-
-        // if the change altered the next scheduled alarm time, tell the user
-        val newNextAlarmTime = alarm.getNextAlarmTime(now)
-        val popupToast = oldNextAlarmTime != newNextAlarmTime
-        mAlarmUpdateHandler.asyncUpdateAlarm(alarm, popupToast, minorUpdate = false)
+    fun setAlarmExcludeHolidaysEnabled(alarm: Alarm, newState: Boolean) {
+        if (newState != alarm.excludeHolidays) {
+            alarm.excludeHolidays = newState
+            Events.sendAlarmEvent(R.string.action_toggle_excludeHolidays, R.string.label_deskclock)
+            mAlarmUpdateHandler.asyncUpdateAlarm(alarm, popToast = false, minorUpdate = true)
+            LOGGER.d("Updating excludeHolidays state to $newState")
+        }
     }
 
     fun setDayOfWeekEnabled(alarm: Alarm, checked: Boolean, index: Int) {
         val now = Calendar.getInstance()
-        val oldNextAlarmTime = alarm.getNextAlarmTime(now)
+        val oldNextAlarmTime = alarm.getNextAlarmTime(now, alarm.excludeHolidays)
 
         val weekday = DataModel.dataModel.weekdayOrder.calendarDays[index]
         alarm.daysOfWeek = alarm.daysOfWeek.setBit(weekday, checked)
 
         // if the change altered the next scheduled alarm time, tell the user
-        val newNextAlarmTime = alarm.getNextAlarmTime(now)
+        val newNextAlarmTime = alarm.getNextAlarmTime(now, alarm.excludeHolidays)
         val popupToast = oldNextAlarmTime != newNextAlarmTime
         mAlarmUpdateHandler.asyncUpdateAlarm(alarm, popupToast, minorUpdate = false)
     }

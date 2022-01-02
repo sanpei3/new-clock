@@ -86,6 +86,14 @@ object ClockContract {
              */
             @JvmField
             val RINGTONE = "ringtone"
+
+            /**
+             * excludeHolidays
+             *
+             * Type: STRING
+             */
+            @JvmField
+            val EXCLUDEHOLIDAYS = "excludeholidays"
         }
     }
 

@@ -92,6 +92,8 @@ class ClockProvider : ContentProvider() {
                     ALARMS_TABLE_NAME + "." + AlarmSettingColumns.LABEL
             sAlarmsWithInstancesProjection[ALARMS_TABLE_NAME + "." + AlarmSettingColumns.RINGTONE] =
                     ALARMS_TABLE_NAME + "." + AlarmSettingColumns.RINGTONE
+            sAlarmsWithInstancesProjection[ALARMS_TABLE_NAME + "." + AlarmSettingColumns.EXCLUDEHOLIDAYS] =
+                ALARMS_TABLE_NAME + "." + AlarmSettingColumns.VIBRATE
             sAlarmsWithInstancesProjection[ALARMS_TABLE_NAME + "." +
                     AlarmsColumns.DELETE_AFTER_USE] =
                     ALARMS_TABLE_NAME + "." + AlarmsColumns.DELETE_AFTER_USE
@@ -115,6 +117,9 @@ class ClockProvider : ContentProvider() {
             sAlarmsWithInstancesProjection[INSTANCES_TABLE_NAME + "." +
                     AlarmSettingColumns.VIBRATE] =
                     INSTANCES_TABLE_NAME + "." + AlarmSettingColumns.VIBRATE
+            sAlarmsWithInstancesProjection[INSTANCES_TABLE_NAME + "." +
+                    AlarmSettingColumns.EXCLUDEHOLIDAYS] =
+                INSTANCES_TABLE_NAME + "." + AlarmSettingColumns.EXCLUDEHOLIDAYS
 
             sURIMatcher.addURI(ClockContract.AUTHORITY, "alarms", ALARMS)
             sURIMatcher.addURI(ClockContract.AUTHORITY, "alarms/#", ALARMS_ID)

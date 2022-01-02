@@ -18,8 +18,10 @@ package com.best.deskclock.data
 
 import android.content.Context
 import androidx.annotation.VisibleForTesting
+import com.best.deskclock.LogUtils
 
 import com.best.deskclock.R
+import com.best.deskclock.data.Holidays
 
 import java.text.DateFormatSymbols
 import java.util.Calendar
@@ -182,17 +184,35 @@ class Weekdays private constructor(bits: Int) {
      * are not considered in this computation.
      *
      * @param time a timestamp relative to which the answer is given
-     * @return the number of days between the given `time` and the next enabled weekday which
+     * @return the number of days 3between the given `time` and the next enabled weekday which
      * is always between 0 and 6 inclusive; `-1` if no weekdays are enabled
      */
-    fun getDistanceToNextDay(time: Calendar): Int {
+    fun getDistanceToNextDay(time: Calendar, excludeHolidays: Boolean): Int {
         var calendarDay = time[Calendar.DAY_OF_WEEK]
-        for (count in 0..6) {
-            if (isBitOn(calendarDay)) {
-                return count
+        var nextTime= time
+        var holidays = Holidays()
+        for (count in 0..365) {
+            LogUtils.i("nextTime: " + nextTime[Calendar.YEAR] + "/" + nextTime[Calendar.MONTH] + "/" + nextTime[Calendar.DAY_OF_MONTH])
+            LogUtils.i("excludeHolidays")
+            if (excludeHolidays) {
+                LogUtils.i("true")
+            } else {
+                LogUtils.i("false")
+            }
+            LogUtils.i("isHoliday")
+            if (holidays.isHoliday(nextTime)) {
+                LogUtils.i("true")
+            } else {
+                LogUtils.i("false")
+            }
+            if (isBitOn(calendarDay))  {
+                if (!excludeHolidays || holidays.isHoliday(nextTime) == false) {
+                    return count
+                }
             }
 
             calendarDay++
+            nextTime.add(Calendar.DAY_OF_WEEK, 1)
             if (calendarDay > Calendar.SATURDAY) {
                 calendarDay = Calendar.SUNDAY
             }
