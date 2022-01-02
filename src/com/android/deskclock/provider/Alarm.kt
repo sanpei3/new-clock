@@ -58,7 +58,7 @@ class Alarm : Parcelable, AlarmsColumns {
     var daysOfWeek: Weekdays
 
     @JvmField
-    var excludeHolidays = false
+    var excludeHolidays: Boolean
 
     @JvmField
     var vibrate: Boolean

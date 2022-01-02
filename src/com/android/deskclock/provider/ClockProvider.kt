@@ -93,7 +93,7 @@ class ClockProvider : ContentProvider() {
             sAlarmsWithInstancesProjection[ALARMS_TABLE_NAME + "." + AlarmSettingColumns.RINGTONE] =
                     ALARMS_TABLE_NAME + "." + AlarmSettingColumns.RINGTONE
             sAlarmsWithInstancesProjection[ALARMS_TABLE_NAME + "." + AlarmSettingColumns.EXCLUDEHOLIDAYS] =
-                ALARMS_TABLE_NAME + "." + AlarmSettingColumns.VIBRATE
+                ALARMS_TABLE_NAME + "." + AlarmSettingColumns.EXCLUDEHOLIDAYS
             sAlarmsWithInstancesProjection[ALARMS_TABLE_NAME + "." +
                     AlarmsColumns.DELETE_AFTER_USE] =
                     ALARMS_TABLE_NAME + "." + AlarmsColumns.DELETE_AFTER_USE

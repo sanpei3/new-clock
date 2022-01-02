@@ -128,7 +128,7 @@ class AlarmTimeClickHandler(
         if (newState != alarm.excludeHolidays) {
             alarm.excludeHolidays = newState
             Events.sendAlarmEvent(R.string.action_toggle_excludeHolidays, R.string.label_deskclock)
-            mAlarmUpdateHandler.asyncUpdateAlarm(alarm, popToast = false, minorUpdate = true)
+            mAlarmUpdateHandler.asyncUpdateAlarm(alarm, popToast = true, minorUpdate = true)
             LOGGER.d("Updating excludeHolidays state to $newState")
         }
     }

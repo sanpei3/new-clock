@@ -90,7 +90,7 @@ object ClockContract {
             /**
              * excludeHolidays
              *
-             * Type: STRING
+             * Type: BOOLEAN
              */
             @JvmField
             val EXCLUDEHOLIDAYS = "excludeholidays"

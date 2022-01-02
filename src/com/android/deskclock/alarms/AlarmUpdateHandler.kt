@@ -113,6 +113,7 @@ class AlarmUpdateHandler(
                         // Copy over minor change data to the instance; we don't know
                         // exactly which minor field changed, so just copy them all.
                         newInstance.mVibrate = alarm.vibrate
+                        newInstance.mExcludeHolidays = alarm.excludeHolidays
                         newInstance.mRingtone = alarm.alert
                         newInstance.mLabel = alarm.label
                         // Since we copied the mId of the old instance and the mId is used
