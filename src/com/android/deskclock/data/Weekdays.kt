@@ -22,6 +22,7 @@ import com.best.deskclock.LogUtils
 
 import com.best.deskclock.R
 import com.best.deskclock.data.Holidays
+import com.best.deskclock.widget.TextTime
 
 import java.text.DateFormatSymbols
 import java.util.Calendar
@@ -189,23 +190,31 @@ class Weekdays private constructor(bits: Int) {
      */
     fun getDistanceToNextDay(time: Calendar, excludeHolidays: Boolean): Int {
         var calendarDay = time[Calendar.DAY_OF_WEEK]
-        var nextTime= time
+        var nextTime = Calendar.getInstance()
+        nextTime[Calendar.ZONE_OFFSET] = time[Calendar.ZONE_OFFSET]
+        nextTime[Calendar.YEAR] = time[Calendar.YEAR]
+        nextTime[Calendar.MONTH] = time[Calendar.MONTH]
+        nextTime[Calendar.DAY_OF_MONTH] = time[Calendar.DAY_OF_MONTH]
         var holidays = Holidays()
-        for (count in 0..365) {
-            LogUtils.i("nextTime: " + nextTime[Calendar.YEAR] + "/" + nextTime[Calendar.MONTH] + "/" + nextTime[Calendar.DAY_OF_MONTH])
-            LogUtils.i("excludeHolidays")
-            if (excludeHolidays) {
-                LogUtils.i("true")
-            } else {
-                LogUtils.i("false")
-            }
-            LogUtils.i("isHoliday")
-            if (holidays.isHoliday(nextTime)) {
-                LogUtils.i("true")
-            } else {
-                LogUtils.i("false")
-            }
+        var maxDays = 6
+        if (excludeHolidays) {
+            maxDays = 365
+        }
+        for (count in 0..maxDays) {
             if (isBitOn(calendarDay))  {
+                LogUtils.i("nextTime: " + nextTime[Calendar.YEAR] + "/" + nextTime[Calendar.MONTH] + "/" + nextTime[Calendar.DAY_OF_MONTH])
+                LogUtils.i("excludeHolidays")
+                if (excludeHolidays) {
+                    LogUtils.i("true")
+                } else {
+                    LogUtils.i("false")
+                }
+                LogUtils.i("isHoliday")
+                if (holidays.isHoliday(nextTime)) {
+                    LogUtils.i("true")
+                } else {
+                    LogUtils.i("false")
+                }
                 if (!excludeHolidays || holidays.isHoliday(nextTime) == false) {
                     return count
                 }
