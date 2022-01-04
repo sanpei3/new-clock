@@ -126,10 +126,20 @@ class AlarmTimeClickHandler(
 
     fun setAlarmExcludeHolidaysEnabled(alarm: Alarm, newState: Boolean) {
         if (newState != alarm.excludeHolidays) {
+            val now = Calendar.getInstance()
+            val oldNextAlarmTime = alarm.getNextAlarmTime(now, alarm.excludeHolidays)
             alarm.excludeHolidays = newState
-            Events.sendAlarmEvent(R.string.action_toggle_excludeHolidays, R.string.label_deskclock)
-            mAlarmUpdateHandler.asyncUpdateAlarm(alarm, popToast = true, minorUpdate = true)
+            Events.sendAlarmEvent(
+                R.string.action_toggle_excludeHolidays,
+                R.string.label_deskclock
+            )
             LOGGER.d("Updating excludeHolidays state to $newState")
+
+            // if the change altered the next scheduled alarm time, tell the user
+            val newNextAlarmTime = alarm.getNextAlarmTime(now, alarm.excludeHolidays)
+            val popupToast = oldNextAlarmTime != newNextAlarmTime
+            mAlarmUpdateHandler.asyncUpdateAlarm(alarm, popupToast, minorUpdate = false)
+
         }
     }
 
