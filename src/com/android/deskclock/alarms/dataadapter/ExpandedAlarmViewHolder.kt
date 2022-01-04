@@ -154,6 +154,7 @@ class ExpandedAlarmViewHolder private constructor(itemView: View, private val mH
         val context: Context = itemView.getContext()
         bindEditLabel(context, alarm)
         bindDaysOfWeekButtons(alarm, context)
+        bindExcludeHolidays((alarm))
         bindVibrator(alarm)
         bindRingtone(context, alarm)
         bindPreemptiveDismissButton(context, alarm, alarmInstance)
@@ -205,6 +206,10 @@ class ExpandedAlarmViewHolder private constructor(itemView: View, private val mH
         } else {
             context.getString(R.string.no_label_specified)
         }
+    }
+
+    private fun bindExcludeHolidays(alarm: Alarm) {
+        excludeHolidays.isChecked = alarm.excludeHolidays
     }
 
     private fun bindVibrator(alarm: Alarm) {
