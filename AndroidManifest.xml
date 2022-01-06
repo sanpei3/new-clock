@@ -158,7 +158,7 @@
         <receiver
             android:name=".AlarmInitReceiver"
             android:directBootAware="true"
-            android:exported="false">
+            android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.BOOT_COMPLETED" />
                 <action android:name="android.intent.action.LOCALE_CHANGED" />
@@ -237,7 +237,7 @@
             android:name=".Screensaver"
             android:label="@string/app_label"
             android:permission="android.permission.BIND_DREAM_SERVICE"
-            android:exported="false">
+            android:exported="true">
             <intent-filter>
                 <action android:name="android.service.dreams.DreamService" />
                 <action android:name="android.app.action.NEXT_ALARM_CLOCK_CHANGED" />
@@ -256,7 +256,7 @@
         <receiver
             android:name="com.best.alarmclock.AnalogAppWidgetProvider"
             android:label="@string/analog_gadget"
-            android:exported="false">
+            android:exported="true">
             <intent-filter>
                 <action android:name="android.appwidget.action.APPWIDGET_UPDATE" />
             </intent-filter>
@@ -272,7 +272,7 @@
         <receiver
             android:name="com.best.alarmclock.DigitalAppWidgetProvider"
             android:label="@string/digital_gadget"
-            android:exported="false">
+            android:exported="true">
             <intent-filter>
                 <action android:name="android.appwidget.action.APPWIDGET_UPDATE" />
                 <action android:name="android.app.action.NEXT_ALARM_CLOCK_CHANGED" />
