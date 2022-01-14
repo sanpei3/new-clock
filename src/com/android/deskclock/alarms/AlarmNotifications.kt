@@ -115,21 +115,14 @@ internal object AlarmNotifications {
         instance: AlarmInstance
     ) {
         LogUtils.v("Displaying low priority notification for alarm instance: " + instance.mId)
-        if (false) {
-            val builder: NotificationCompat.Builder = NotificationCompat.Builder(
-                context, ALARM_LOW_PRIORITY_NOTIFICATION_CHANNEL_ID
-            )
+
+        val builder: NotificationCompat.Builder = NotificationCompat.Builder(
+                context, ALARM_LOW_PRIORITY_NOTIFICATION_CHANNEL_ID)
                 .setShowWhen(false)
-                .setContentTitle(
-                    context.getString(
-                        R.string.alarm_alert_predismiss_title
-                    )
-                )
-                .setContentText(
-                    AlarmUtils.getAlarmText(
-                        context, instance, true /* includeLabel */
-                    )
-                )
+                .setContentTitle(context.getString(
+                        R.string.alarm_alert_predismiss_title))
+                .setContentText(AlarmUtils.getAlarmText(
+                        context, instance, true /* includeLabel */))
                 .setColor(ContextCompat.getColor(context, R.color.default_background))
                 .setSmallIcon(R.drawable.stat_notify_alarm)
                 .setAutoCancel(false)
@@ -139,60 +132,42 @@ internal object AlarmNotifications {
                 .setVisibility(NotificationCompat.VISIBILITY_PUBLIC)
                 .setLocalOnly(true)
 
-            if (Utils.isNOrLater) {
-                builder.setGroup(UPCOMING_GROUP_KEY)
-            }
+        if (Utils.isNOrLater) {
+            builder.setGroup(UPCOMING_GROUP_KEY)
+        }
 
-            // Setup up hide notification
-            val hideIntent: Intent = AlarmStateManager.createStateChangeIntent(
-                context,
+        // Setup up hide notification
+        val hideIntent: Intent = AlarmStateManager.createStateChangeIntent(context,
                 AlarmStateManager.ALARM_DELETE_TAG, instance,
-                InstancesColumns.HIDE_NOTIFICATION_STATE
-            )
-            val id = instance.hashCode()
-            builder.setDeleteIntent(
-                PendingIntent.getService(
-                    context, id,
-                    hideIntent, PendingIntent.FLAG_UPDATE_CURRENT
-                )
-            )
+                InstancesColumns.HIDE_NOTIFICATION_STATE)
+        val id = instance.hashCode()
+        builder.setDeleteIntent(PendingIntent.getService(context, id,
+                hideIntent, PendingIntent.FLAG_UPDATE_CURRENT))
 
-            // Setup up dismiss action
-            val dismissIntent: Intent = AlarmStateManager.createStateChangeIntent(
-                context,
-                AlarmStateManager.ALARM_DISMISS_TAG, instance, InstancesColumns.PREDISMISSED_STATE
-            )
-            builder.addAction(
-                R.drawable.ic_alarm_off_24dp,
+        // Setup up dismiss action
+        val dismissIntent: Intent = AlarmStateManager.createStateChangeIntent(context,
+                AlarmStateManager.ALARM_DISMISS_TAG, instance, InstancesColumns.PREDISMISSED_STATE)
+        builder.addAction(R.drawable.ic_alarm_off_24dp,
                 context.getString(R.string.alarm_alert_dismiss_text),
-                PendingIntent.getService(
-                    context, id,
-                    dismissIntent, PendingIntent.FLAG_UPDATE_CURRENT
-                )
-            )
+                PendingIntent.getService(context, id,
+                        dismissIntent, PendingIntent.FLAG_UPDATE_CURRENT))
 
-            // Setup content action if instance is owned by alarm
-            val viewAlarmIntent: Intent = createViewAlarmIntent(context, instance)
-            builder.setContentIntent(
-                PendingIntent.getActivity(
-                    context, id,
-                    viewAlarmIntent, PendingIntent.FLAG_UPDATE_CURRENT
-                )
-            )
+        // Setup content action if instance is owned by alarm
+        val viewAlarmIntent: Intent = createViewAlarmIntent(context, instance)
+        builder.setContentIntent(PendingIntent.getActivity(context, id,
+                viewAlarmIntent, PendingIntent.FLAG_UPDATE_CURRENT))
 
-            val nm: NotificationManagerCompat = NotificationManagerCompat.from(context)
-            if (android.os.Build.VERSION.SDK_INT >= android.os.Build.VERSION_CODES.O) {
-                val channel = NotificationChannel(
+        val nm: NotificationManagerCompat = NotificationManagerCompat.from(context)
+        if (android.os.Build.VERSION.SDK_INT >= android.os.Build.VERSION_CODES.O) {
+            val channel = NotificationChannel(
                     ALARM_LOW_PRIORITY_NOTIFICATION_CHANNEL_ID,
                     context.getString(R.string.default_label),
-                    NotificationManagerCompat.IMPORTANCE_DEFAULT
-                )
-                nm.createNotificationChannel(channel)
-            }
-            val notification: Notification = builder.build()
-            nm.notify(id, notification)
-            updateUpcomingAlarmGroupNotification(context, -1, notification)
+                    NotificationManagerCompat.IMPORTANCE_DEFAULT)
+            nm.createNotificationChannel(channel)
         }
+        val notification: Notification = builder.build()
+        nm.notify(id, notification)
+        updateUpcomingAlarmGroupNotification(context, -1, notification)
     }
 
     @JvmStatic
@@ -202,21 +177,14 @@ internal object AlarmNotifications {
         instance: AlarmInstance
     ) {
         LogUtils.v("Displaying high priority notification for alarm instance: " + instance.mId)
-        if (false) {
-            val builder: NotificationCompat.Builder = NotificationCompat.Builder(
-                context, ALARM_HIGH_PRIORITY_NOTIFICATION_CHANNEL_ID
-            )
+
+        val builder: NotificationCompat.Builder = NotificationCompat.Builder(
+                context, ALARM_HIGH_PRIORITY_NOTIFICATION_CHANNEL_ID)
                 .setShowWhen(false)
-                .setContentTitle(
-                    context.getString(
-                        R.string.alarm_alert_predismiss_title
-                    )
-                )
-                .setContentText(
-                    AlarmUtils.getAlarmText(
-                        context, instance, true /* includeLabel */
-                    )
-                )
+                .setContentTitle(context.getString(
+                        R.string.alarm_alert_predismiss_title))
+                .setContentText(AlarmUtils.getAlarmText(
+                        context, instance, true /* includeLabel */))
                 .setColor(ContextCompat.getColor(context, R.color.default_background))
                 .setSmallIcon(R.drawable.stat_notify_alarm)
                 .setAutoCancel(false)
@@ -226,47 +194,35 @@ internal object AlarmNotifications {
                 .setVisibility(NotificationCompat.VISIBILITY_PUBLIC)
                 .setLocalOnly(true)
 
-            if (Utils.isNOrLater) {
-                builder.setGroup(UPCOMING_GROUP_KEY)
-            }
+        if (Utils.isNOrLater) {
+            builder.setGroup(UPCOMING_GROUP_KEY)
+        }
 
-            // Setup up dismiss action
-            val dismissIntent: Intent = AlarmStateManager.createStateChangeIntent(
-                context,
-                AlarmStateManager.ALARM_DISMISS_TAG, instance, InstancesColumns.PREDISMISSED_STATE
-            )
-            val id = instance.hashCode()
-            builder.addAction(
-                R.drawable.ic_alarm_off_24dp,
+        // Setup up dismiss action
+        val dismissIntent: Intent = AlarmStateManager.createStateChangeIntent(context,
+                AlarmStateManager.ALARM_DISMISS_TAG, instance, InstancesColumns.PREDISMISSED_STATE)
+        val id = instance.hashCode()
+        builder.addAction(R.drawable.ic_alarm_off_24dp,
                 context.getString(R.string.alarm_alert_dismiss_text),
-                PendingIntent.getService(
-                    context, id,
-                    dismissIntent, PendingIntent.FLAG_UPDATE_CURRENT
-                )
-            )
+                PendingIntent.getService(context, id,
+                        dismissIntent, PendingIntent.FLAG_UPDATE_CURRENT))
 
-            // Setup content action if instance is owned by alarm
-            val viewAlarmIntent: Intent = createViewAlarmIntent(context, instance)
-            builder.setContentIntent(
-                PendingIntent.getActivity(
-                    context, id,
-                    viewAlarmIntent, PendingIntent.FLAG_UPDATE_CURRENT
-                )
-            )
+        // Setup content action if instance is owned by alarm
+        val viewAlarmIntent: Intent = createViewAlarmIntent(context, instance)
+        builder.setContentIntent(PendingIntent.getActivity(context, id,
+                viewAlarmIntent, PendingIntent.FLAG_UPDATE_CURRENT))
 
-            val nm: NotificationManagerCompat = NotificationManagerCompat.from(context)
-            if (android.os.Build.VERSION.SDK_INT >= android.os.Build.VERSION_CODES.O) {
-                val channel = NotificationChannel(
+        val nm: NotificationManagerCompat = NotificationManagerCompat.from(context)
+        if (android.os.Build.VERSION.SDK_INT >= android.os.Build.VERSION_CODES.O) {
+            val channel = NotificationChannel(
                     ALARM_HIGH_PRIORITY_NOTIFICATION_CHANNEL_ID,
                     context.getString(R.string.default_label),
-                    NotificationManagerCompat.IMPORTANCE_HIGH
-                )
-                nm.createNotificationChannel(channel)
-            }
-            val notification: Notification = builder.build()
-            nm.notify(id, notification)
-            updateUpcomingAlarmGroupNotification(context, -1, notification)
+                    NotificationManagerCompat.IMPORTANCE_HIGH)
+            nm.createNotificationChannel(channel)
         }
+        val notification: Notification = builder.build()
+        nm.notify(id, notification)
+        updateUpcomingAlarmGroupNotification(context, -1, notification)
     }
 
     @TargetApi(Build.VERSION_CODES.N)
