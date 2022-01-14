@@ -32,6 +32,7 @@ import com.best.deskclock.provider.ClockContract.AlarmSettingColumns
 import com.best.deskclock.provider.ClockContract.AlarmsColumns
 import com.best.deskclock.provider.ClockContract.InstancesColumns
 
+
 import java.util.Calendar
 
 /**
@@ -218,6 +219,7 @@ class ClockDatabaseHelper(context: Context)
         const val OLD_ALARMS_TABLE_NAME: String = "alarms"
         const val ALARMS_TABLE_NAME: String = "alarm_templates"
         const val INSTANCES_TABLE_NAME: String = "alarm_instances"
+        const val HOLIDAY_TABLE_NAME: String = "alarm_holidays"
         private const val SELECTED_CITIES_TABLE_NAME: String = "selected_cities"
 
         private fun createAlarmsTable(db: SQLiteDatabase) {
@@ -254,5 +256,15 @@ class ClockDatabaseHelper(context: Context)
                     ");")
             LogUtils.i("Instance table created")
         }
+        /**
+        *private fun createHolidayTable(db:SQLiteDatabase) {
+        *    db.execSQL("CREATE TABLE " + HOLIDAY_TABLE_NAME + " (" +
+        *            BaseColumns._ID + " INTEGER PRIMARY KEY," +
+        *            HolidayColumns.YEAR + " INTEGER NOT NULL, " +
+        *            HolidayColumns.MONTH + " INTEGER NOT NULL, " +
+        *            HolidayColumns.DAY + " INTEGER NOT NULL  DEFAULT 0);")
+        *    LogUtils.i("Holiday Table created")
+        *}
+         */
     }
 }

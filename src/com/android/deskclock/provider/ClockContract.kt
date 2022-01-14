@@ -34,6 +34,7 @@ import com.best.deskclock.provider.ClockContract.InstancesColumns
  *
  *  * The [AlarmsColumns] table holds the user created alarms
  *  * The [InstancesColumns] table holds the current state of each
+ *  * The [HolidayColumns] table holds the holidays date
  * alarm in the AlarmsColumn table.
  */
 object ClockContract {
@@ -283,6 +284,30 @@ object ClockContract {
              * Type: INTEGER
              */
             const val ALARM_STATE = "alarm_state"
+        }
+        interface HolidayColumns : BaseColumns {
+            companion object {
+                /**
+                 * Holiday year.
+                 *
+                 * Type: INTEGER
+                 */
+                const val YEAR = "year"
+
+                /**
+                 * Holiday month in year.
+                 *
+                 * Type: INTEGER
+                 */
+                const val MONTH = "month"
+
+                /**
+                 * holiday day in month.
+                 *
+                 * Type: INTEGER
+                 */
+                const val DAY = "day"
+            }
         }
     }
 }
