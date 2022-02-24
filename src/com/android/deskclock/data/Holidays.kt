@@ -17,9 +17,8 @@ package com.best.deskclock.data
 
 import android.content.Context
 import android.content.SharedPreferences
-import androidx.core.text.buildSpannedString
-import com.best.deskclock.DeskClockApplication
-import com.best.deskclock.settings.MaterialCalendarActivity
+import com.best.deskclock.AsyncHandler
+import com.best.deskclock.alarms.AlarmStateManager
 import java.util.*
 
 class Holidays {
@@ -130,6 +129,14 @@ class Holidays {
                 mHolidays.add(str)
             }
             writeHolidaysToPrefs()
+            AsyncHandler.post {
+                try {
+                    // Update all the alarm instances on time change event
+                    mContext?.let { AlarmStateManager.fixAlarmInstances(it) }
+                } finally {
+
+                }
+            }
         }
     }
 
