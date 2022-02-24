@@ -15,11 +15,21 @@
  */
 package com.best.deskclock.data
 
+import android.content.Context
+import android.content.SharedPreferences
+import androidx.core.text.buildSpannedString
+import com.best.deskclock.DeskClockApplication
+import com.best.deskclock.settings.MaterialCalendarActivity
 import java.util.*
 
-public class Holidays {
+class Holidays {
+
+
     companion object {
-        private val holidays = arrayOf(
+        private var mContext: Context? = null
+        private var mPrefs: SharedPreferences? = null
+        private val mHolidays = arrayListOf<String>()
+        private val default_holidays = arrayOf(
             "2022/01/01",  // Western New Year's Day
             "2022/01/02",
             "2022/01/03",
@@ -39,31 +49,89 @@ public class Holidays {
             "2022/05/05",  // Children's day
             "2022/07/18",  // Marine day
         )
-    }
 
-    fun isHoliday(time: Calendar): Boolean {
-        for (holiday in holidays) {
-            var h = holiday.split("/")
-            var month = h[1]
-            if (time[Calendar.YEAR].equals(h[0].toInt()) &&
-                time[Calendar.MONTH].equals(h[1].toInt() - 1) &&
-                time[Calendar.DAY_OF_MONTH].equals(h[2].toInt())) {
-                return true
+        /** Key to an extra that defines resource id to the title of this activity.  */
+        private const val KEY_HOLIDAYS = "holidays"
+
+        fun getHolidays() :MutableList<Calendar> {
+            val calendars: MutableList<Calendar> = ArrayList()
+            for (holiday in mHolidays) {
+                var h = holiday.split("/")
+                var year = h[0].toInt()
+                var month = h[1].toInt() - 1
+                var dayofMonth = h[2].toInt()
+                val calendar = Calendar.getInstance()
+                calendar[year, month] = dayofMonth
+                calendars.add(calendar)
+            }
+            return calendars
+        }
+        fun isHoliday(time: Calendar): Boolean {
+            for (holiday in mHolidays) {
+                var h = holiday.split("/")
+                var month = h[1]
+                if (time[Calendar.YEAR].equals(h[0].toInt()) &&
+                    time[Calendar.MONTH].equals(h[1].toInt() - 1) &&
+                    time[Calendar.DAY_OF_MONTH].equals(h[2].toInt())) {
+                    return true
+                }
+            }
+            return false
+        }
+    }
+    fun init(context: Context, prefs: SharedPreferences) {
+        if (mContext != context) {
+            mContext = context
+            mPrefs = prefs
+            var prefsHolidays = prefs.getString(KEY_HOLIDAYS, null)
+            if (prefsHolidays == null) {
+                // 空っぽならば、新規につくる
+                mHolidays.clear()
+                for (holiday in default_holidays) {
+                    mHolidays.add(holiday)
+                }
+                // prefsにmHolidays を変換して書き込む
+                writeHolidaysToPrefs()
+            } else {
+                mHolidays.clear()
+                for (holiday in prefsHolidays.split(",")) {
+                    if (holiday != "") {
+                        mHolidays.add(holiday)
+                    }
+                }
             }
         }
-        return false
     }
-    fun getHolidays() :MutableList<Calendar> {
-        val calendars: MutableList<Calendar> = ArrayList()
-        for (holiday in holidays) {
-            var h = holiday.split("/")
-            var year = h[0].toInt()
-            var month = h[1].toInt() - 1
-            var dayofMonth = h[2].toInt()
-            val calendar = Calendar.getInstance()
-            calendar[year, month] = dayofMonth
-            calendars.add(calendar)
+
+    // XX writeHolidaysTo
+    private fun writeHolidaysToPrefs () {
+        var strHolidays = ""
+        for (holiday in mHolidays) {
+            strHolidays = strHolidays + holiday + ","
         }
-        return calendars
+        val editor = mPrefs!!.edit()
+        //editor.putString(KEY_HOLIDAYS, holidays.getHolidaysString)
+        editor.putString(KEY_HOLIDAYS, strHolidays)
+        //editor.commit();
+        editor.apply()
     }
+
+    // XX
+    fun setHolidays (holidays: List<Calendar>) {
+        // XXholidaysをmHolidaysに設定する
+        if (holidays == null) {
+            return
+        } else {
+            mHolidays.clear()
+            for (holiday in holidays) {
+                var str = holiday[Calendar.YEAR].toString() + "/" +
+                    (holiday[Calendar.MONTH] + 1).toString() + "/" +
+                    holiday[Calendar.DAY_OF_MONTH].toString()
+                mHolidays.add(str)
+            }
+            writeHolidaysToPrefs()
+        }
+    }
+
+
 }

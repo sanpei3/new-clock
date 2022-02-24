@@ -195,7 +195,6 @@ class Weekdays private constructor(bits: Int) {
         nextTime[Calendar.YEAR] = time[Calendar.YEAR]
         nextTime[Calendar.MONTH] = time[Calendar.MONTH]
         nextTime[Calendar.DAY_OF_MONTH] = time[Calendar.DAY_OF_MONTH]
-        var holidays = Holidays()
         var maxDays = 6
         if (excludeHolidays) {
             maxDays = 365
@@ -210,12 +209,12 @@ class Weekdays private constructor(bits: Int) {
                     LogUtils.i("false")
                 }
                 LogUtils.i("isHoliday")
-                if (holidays.isHoliday(nextTime)) {
+                if (Holidays.isHoliday(nextTime)) {
                     LogUtils.i("true")
                 } else {
                     LogUtils.i("false")
                 }
-                if (!excludeHolidays || holidays.isHoliday(nextTime) == false) {
+                if (!excludeHolidays || Holidays.isHoliday(nextTime) == false) {
                     return count
                 }
             }

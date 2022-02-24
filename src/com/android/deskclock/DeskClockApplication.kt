@@ -27,6 +27,7 @@ import com.best.deskclock.controller.Controller
 import com.best.deskclock.data.DataModel
 import com.best.deskclock.events.LogEventTracker
 import com.best.deskclock.uidata.UiDataModel
+import com.best.deskclock.data.Holidays
 
 class DeskClockApplication : Application() {
     override fun onCreate() {
@@ -39,6 +40,8 @@ class DeskClockApplication : Application() {
         UiDataModel.uiDataModel.init(applicationContext, prefs)
         Controller.getController().setContext(applicationContext)
         Controller.getController().addEventTracker(LogEventTracker(applicationContext))
+        var holidays = Holidays()
+        holidays.init(applicationContext, prefs)
     }
 
     companion object {
@@ -63,3 +66,4 @@ class DeskClockApplication : Application() {
         }
     }
 }
+

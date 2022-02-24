@@ -16,11 +16,13 @@ import com.best.deskclock.R
 import java.util.*
 
 class MaterialCalendarActivity : AppCompatActivity() {
+    private var mCalendarView: CalendarView? = null
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.setting_holiday)
 
         val calendarView = findViewById<CalendarView>(R.id.calendarView)
+        mCalendarView = calendarView
 
         val context: Context = getApplicationContext()
         val titleResourceId = intent.getIntExtra(EXTRA_TITLE, 0)
@@ -30,25 +32,16 @@ class MaterialCalendarActivity : AppCompatActivity() {
         min.add(Calendar.DAY_OF_MONTH, -1);
         calendarView.setMinimumDate(min)
 
-        var holidays = Holidays()
-//        calendarView.setSelectedDates(holidays.getHolidays())
-        calendarView.setHighlightedDays(holidays.getHolidays())
+        calendarView.setSelectedDates(Holidays.getHolidays())
 
         calendarView.setOnDayClickListener(OnDayClickListener { eventDay ->
-             //currently, do nothing(only show holidays)
-            //val nowCalendar = eventDay.calendar
-
+            val nowCalendar = eventDay.calendar
             Toast.makeText(
                 applicationContext,
-                "Even you select the holidays, it is not added to the holidays list(not yet implemented)."
-            ,Toast.LENGTH_LONG
+                nowCalendar.get(Calendar.YEAR).toString() + "-" +
+                        (nowCalendar.get(Calendar.MONTH) + 1).toString() + "-" +
+                        nowCalendar.get(Calendar.DATE).toString(), Toast.LENGTH_SHORT
             ).show()
-            //Toast.makeText(
-            //    applicationContext,
-            //    nowCalendar.get(Calendar.YEAR).toString() + "-" +
-            //            (nowCalendar.get(Calendar.MONTH) + 1).toString() + "-" +
-            //            nowCalendar.get(Calendar.DATE).toString(), Toast.LENGTH_SHORT
-            //).show()
 
 
         })
@@ -56,10 +49,18 @@ class MaterialCalendarActivity : AppCompatActivity() {
     override fun onOptionsItemSelected(item: MenuItem): Boolean {
         when(item?.itemId){
             android.R.id.home->{
+                var holidays = Holidays()
+                mCalendarView?.getSelectedDates()?.let { holidays.setHolidays(it) }
                 finish()
             }
         }
         return super.onOptionsItemSelected(item)
+    }
+
+    override fun onDestroy() {
+        var holidays = Holidays()
+        mCalendarView?.getSelectedDates()?.let { holidays.setHolidays(it) }
+        super.onDestroy()
     }
 
     companion object {
