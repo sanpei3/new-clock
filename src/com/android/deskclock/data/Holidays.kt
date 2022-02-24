@@ -16,7 +16,6 @@
 package com.best.deskclock.data
 
 import java.util.*
-import java.util.Calendar
 
 public class Holidays {
     companion object {
@@ -31,6 +30,8 @@ public class Holidays {
             "2022/02/21",  // Personal Holiday
             "2022/02/23",  // The emperor's birthday(Japan)
             "2022/03/21",  // Vernal Equinox Day
+            "2022/03/28",  // Personal Holiday
+            "2022/04/25",  // Personal Holiday
             "2022/04/29",  // Showa Day
             "2022/05/02",  // Day off for Labor holiday
             "2022/05/03",  // Constitution Memorial Day
@@ -51,5 +52,18 @@ public class Holidays {
             }
         }
         return false
+    }
+    fun getHolidays() :MutableList<Calendar> {
+        val calendars: MutableList<Calendar> = ArrayList()
+        for (holiday in holidays) {
+            var h = holiday.split("/")
+            var year = h[0].toInt()
+            var month = h[1].toInt() - 1
+            var dayofMonth = h[2].toInt()
+            val calendar = Calendar.getInstance()
+            calendar[year, month] = dayofMonth
+            calendars.add(calendar)
+        }
+        return calendars
     }
 }
