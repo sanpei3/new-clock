@@ -29,18 +29,7 @@ class Holidays {
         private var mPrefs: SharedPreferences? = null
         private val mHolidays = arrayListOf<String>()
         private val default_holidays = arrayOf(
-            "2022/01/01",  // Western New Year's Day
-            "2022/01/02",
-            "2022/01/03",
-            "2022/01/04",  // Company holiday
-            "2022/01/10",  // Coming of age day
-            "2022/01/24",  // Personal Holiday
-            "2022/02/11",  // National Foundation Day(Japan)
-            "2022/02/21",  // Personal Holiday
-            "2022/02/23",  // The emperor's birthday(Japan)
             "2022/03/21",  // Vernal Equinox Day
-            "2022/03/28",  // Personal Holiday
-            "2022/04/25",  // Personal Holiday
             "2022/04/29",  // Showa Day
             "2022/05/02",  // Day off for Labor holiday
             "2022/05/03",  // Constitution Memorial Day
