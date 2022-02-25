@@ -10,7 +10,7 @@ CURRENTLY UNDER DEVELOPMENT
 * ALARM: exclude holidayes
 
 # Known Issues
-* Holiday infomation is hardcoded at [source file](https://github.com/sanpei3/new-clock/blob/master/src/com/android/deskclock/data/Holidays.kt)
+* [SOLVED](https://github.com/sanpei3/new-clock/commit/fd567135c39d9e420fa7699be1eb6286a521e6ce) Holiday infomation is hardcoded at [source file](https://github.com/sanpei3/new-clock/blob/master/src/com/android/deskclock/data/Holidays.kt)
 * [SOLVED](https://github.com/sanpei3/new-clock/commit/c0b40f2bea72226412305dcb5c8238490814f607#diff-cd42fd1660bc47709114e606adf51ec7b81c925830c1cebd89729f73e5bfbaaa) If user push "Exclude Holidayes" button, however it does not effect alarm setting. Currently user have to push "week of day button".
 
 # NOTICE
