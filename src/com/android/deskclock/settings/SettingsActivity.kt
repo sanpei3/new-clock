@@ -33,6 +33,7 @@ import com.best.deskclock.actionbarmenu.MenuItemControllerFactory
 import com.best.deskclock.actionbarmenu.NavUpMenuItemController
 import com.best.deskclock.actionbarmenu.OptionsMenuManager
 import com.best.deskclock.data.DataModel
+import com.best.deskclock.data.Holidays
 import com.best.deskclock.ringtone.RingtonePickerActivity
 
 /**
@@ -148,7 +149,10 @@ class SettingsActivity : BaseActivity() {
                     DataModel.dataModel.timerVibrate = timerVibratePref.isChecked()
                 }
                 KEY_TIMER_RINGTONE -> pref.setSummary(DataModel.dataModel.timerRingtoneTitle)
-                KEY_HOLIDAYS -> pref.setSummary("")
+                KEY_HOLIDAYS -> {
+                    var holidays = Holidays()
+                    pref.setSummary(holidays.getHolidaysByStrings())
+                }
                 KEY_ALARM_NOTIFICATION -> {
                     DataModel.dataModel.alarmNotification = newValue as Boolean
                 }
@@ -275,11 +279,14 @@ class SettingsActivity : BaseActivity() {
                 it.setOnPreferenceClickListener(this)
                 it.setSummary(DataModel.dataModel.timerRingtoneTitle)
             }
+
             val holidaysPref: Preference? = findPreference(KEY_HOLIDAYS)
             holidaysPref?.let {
                 it.setOnPreferenceClickListener(this)
-                it.setSummary("")
+                var holidays = Holidays()
+                it.setSummary(holidays.getHolidaysByStrings())
             }
+
             val alarmNotificationPref: Preference? = findPreference(KEY_ALARM_NOTIFICATION)
             alarmNotificationPref?.setOnPreferenceChangeListener(this)
         }

@@ -54,6 +54,7 @@ class Holidays {
             }
             return calendars
         }
+
         fun isHoliday(time: Calendar): Boolean {
             for (holiday in mHolidays) {
                 var h = holiday.split("/")
@@ -89,6 +90,17 @@ class Holidays {
                 }
             }
         }
+    }
+
+    fun getHolidaysByStrings() :String {
+        var strHolidays = ""
+        for (holiday in mHolidays) {
+            if (strHolidays != "") {
+                strHolidays = strHolidays + ","
+            }
+            strHolidays = strHolidays + holiday
+        }
+        return strHolidays
     }
 
     // XX writeHolidaysTo
