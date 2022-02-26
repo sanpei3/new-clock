@@ -988,6 +988,23 @@ class DataModel private constructor() {
             mSettingsModel!!.displayClockSeconds = displaySeconds
         }
 
+    var alarmNotification: Boolean
+        /**
+         * @return `true` if user want to enable alarm notification
+         */
+        get() {
+            // Utils.enforceMainLooper()
+            return mSettingsModel!!.alarmNotification
+        }
+        /**
+         * @param alarmNotification whether or not to notify alarm setting status on notification
+         */
+        set(alarmNotification) {
+            Utils.enforceMainLooper()
+            mSettingsModel!!.alarmNotification = alarmNotification
+        }
+
+
     /**
      * @return the style of clock to display in the clock screensaver
      */
