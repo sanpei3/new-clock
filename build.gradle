@@ -87,4 +87,5 @@ dependencies {
     //implementation "androidx.core:core-ktx:+"
     implementation "androidx.core:core-ktx:1.6.0"
     implementation "org.jetbrains.kotlin:kotlin-stdlib-jdk7:$kotlin_version"
+    implementation 'com.applandeo:material-calendar-view:1.7.0'
 }

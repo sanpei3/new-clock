@@ -24,13 +24,7 @@ import android.provider.Settings
 import android.view.Menu
 import android.view.MenuItem
 import android.view.View
-import androidx.preference.ListPreference
-import androidx.preference.ListPreferenceDialogFragmentCompat
-import androidx.preference.Preference
-import androidx.preference.PreferenceDialogFragmentCompat
-import androidx.preference.PreferenceFragmentCompat
-import androidx.preference.TwoStatePreference
-
+import androidx.preference.*
 import com.best.deskclock.BaseActivity
 import com.best.deskclock.DropShadowController
 import com.best.deskclock.R
@@ -154,6 +148,7 @@ class SettingsActivity : BaseActivity() {
                     DataModel.dataModel.timerVibrate = timerVibratePref.isChecked()
                 }
                 KEY_TIMER_RINGTONE -> pref.setSummary(DataModel.dataModel.timerRingtoneTitle)
+                KEY_HOLIDAYS -> pref.setSummary("")
             }
 
             // Set result so DeskClock knows to refresh itself
@@ -173,6 +168,10 @@ class SettingsActivity : BaseActivity() {
                 }
                 KEY_TIMER_RINGTONE -> {
                     startActivity(RingtonePickerActivity.createTimerRingtonePickerIntent(context))
+                    return true
+                }
+                KEY_HOLIDAYS -> {
+                    startActivity(MaterialCalendarActivity.createMaterialCalenderPickerIntent(context))
                     return true
                 }
                 else -> return false
@@ -273,6 +272,12 @@ class SettingsActivity : BaseActivity() {
                 it.setOnPreferenceClickListener(this)
                 it.setSummary(DataModel.dataModel.timerRingtoneTitle)
             }
+            val holidaysPref: Preference? = findPreference(KEY_HOLIDAYS)
+            holidaysPref?.let {
+                it.setOnPreferenceClickListener(this)
+                it.setSummary("")
+            }
+
         }
 
         private fun refreshListPreference(preference: ListPreference) {
@@ -305,6 +310,7 @@ class SettingsActivity : BaseActivity() {
         const val KEY_DATE_TIME = "date_time"
         const val KEY_VOLUME_BUTTONS = "volume_button_setting"
         const val KEY_WEEK_START = "week_start"
+        const val KEY_HOLIDAYS = "holidays"
         const val DEFAULT_VOLUME_BEHAVIOR = "0"
         const val VOLUME_BEHAVIOR_SNOOZE = "1"
         const val VOLUME_BEHAVIOR_DISMISS = "2"

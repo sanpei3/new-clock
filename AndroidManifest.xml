@@ -68,6 +68,12 @@
             android:theme="@style/Theme.DeskClock.RingtonePicker" />
 
         <activity
+            android:name=".settings.MaterialCalendarActivity"
+            android:excludeFromRecents="true"
+            android:taskAffinity=""
+            android:theme="@style/Theme.DeskClock.MaterialCalendar" />
+
+        <activity
             android:name=".worldclock.CitySelectionActivity"
             android:excludeFromRecents="true"
             android:label="@string/cities_activity_title"

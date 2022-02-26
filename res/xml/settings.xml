@@ -92,6 +92,9 @@
             android:entryValues="@array/week_start_values"
             android:key="week_start"
             android:title="@string/week_start_title" />
+        <Preference
+            android:key="holidays"
+            android:title="@string/open_holiday_settings" />
     </PreferenceCategory>
 
     <PreferenceCategory
