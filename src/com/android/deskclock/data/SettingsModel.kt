@@ -69,6 +69,12 @@ internal class SettingsModel(
             SettingsDAO.setDisplayClockSeconds(mPrefs, shouldDisplaySeconds)
         }
 
+    var alarmNotification: Boolean
+        get() = SettingsDAO.getAlarmNotification(mPrefs)
+        set(shouldAlarmNotification) {
+            SettingsDAO.setAlarmNotification(mPrefs, shouldAlarmNotification)
+        }
+
     val screensaverClockStyle: DataModel.ClockStyle
         get() = SettingsDAO.getScreensaverClockStyle(mContext, mPrefs)
 

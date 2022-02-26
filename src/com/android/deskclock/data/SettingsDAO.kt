@@ -142,6 +142,21 @@ internal object SettingsDAO {
     }
 
     /**
+     * @return a value indicating whether enable/disable alarm notification
+     */
+    fun getAlarmNotification(prefs: SharedPreferences): Boolean {
+        return prefs.getBoolean(SettingsActivity.KEY_ALARM_NOTIFICATION, false)
+    }
+
+    /**
+     * @param Alarm Notification whether or not to notify the alarm
+     */
+    fun setAlarmNotification(prefs: SharedPreferences, alarmNotification: Boolean) {
+        prefs.edit().putBoolean(SettingsActivity.KEY_ALARM_NOTIFICATION, alarmNotification).apply()
+    }
+
+
+    /**
      * Sets the user's display seconds preference based on the currently selected clock if one has
      * not yet been manually chosen.
      */

@@ -92,9 +92,14 @@
             android:entryValues="@array/week_start_values"
             android:key="week_start"
             android:title="@string/week_start_title" />
+
         <Preference
             android:key="holidays"
             android:title="@string/open_holiday_settings" />
+
+        <SwitchPreferenceCompat
+            android:key="alarm_notification"
+            android:title="Alarm Notification" />
     </PreferenceCategory>
 
     <PreferenceCategory

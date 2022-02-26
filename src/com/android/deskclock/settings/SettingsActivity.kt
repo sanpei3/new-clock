@@ -149,6 +149,9 @@ class SettingsActivity : BaseActivity() {
                 }
                 KEY_TIMER_RINGTONE -> pref.setSummary(DataModel.dataModel.timerRingtoneTitle)
                 KEY_HOLIDAYS -> pref.setSummary("")
+                KEY_ALARM_NOTIFICATION -> {
+                    DataModel.dataModel.alarmNotification = newValue as Boolean
+                }
             }
 
             // Set result so DeskClock knows to refresh itself
@@ -277,7 +280,8 @@ class SettingsActivity : BaseActivity() {
                 it.setOnPreferenceClickListener(this)
                 it.setSummary("")
             }
-
+            val alarmNotificationPref: Preference? = findPreference(KEY_ALARM_NOTIFICATION)
+            alarmNotificationPref?.setOnPreferenceChangeListener(this)
         }
 
         private fun refreshListPreference(preference: ListPreference) {
@@ -311,6 +315,7 @@ class SettingsActivity : BaseActivity() {
         const val KEY_VOLUME_BUTTONS = "volume_button_setting"
         const val KEY_WEEK_START = "week_start"
         const val KEY_HOLIDAYS = "holidays"
+        const val KEY_ALARM_NOTIFICATION = "alarm_notification"
         const val DEFAULT_VOLUME_BEHAVIOR = "0"
         const val VOLUME_BEHAVIOR_SNOOZE = "1"
         const val VOLUME_BEHAVIOR_DISMISS = "2"

@@ -40,6 +40,7 @@ import com.best.deskclock.provider.AlarmInstance
 import com.best.deskclock.provider.ClockContract.InstancesColumns
 import com.best.deskclock.R
 import com.best.deskclock.Utils
+import com.best.deskclock.data.DataModel
 
 import java.text.DateFormat
 import java.text.SimpleDateFormat
@@ -115,7 +116,7 @@ internal object AlarmNotifications {
         instance: AlarmInstance
     ) {
         LogUtils.v("Displaying low priority notification for alarm instance: " + instance.mId)
-        if (false) {
+        if (DataModel.dataModel.alarmNotification) {
             val builder: NotificationCompat.Builder = NotificationCompat.Builder(
                 context, ALARM_LOW_PRIORITY_NOTIFICATION_CHANNEL_ID
             )
@@ -202,7 +203,7 @@ internal object AlarmNotifications {
         instance: AlarmInstance
     ) {
         LogUtils.v("Displaying high priority notification for alarm instance: " + instance.mId)
-        if (false) {
+        if (DataModel.dataModel.alarmNotification) {
             val builder: NotificationCompat.Builder = NotificationCompat.Builder(
                 context, ALARM_HIGH_PRIORITY_NOTIFICATION_CHANNEL_ID
             )
