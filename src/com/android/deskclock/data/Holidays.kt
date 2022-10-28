@@ -43,6 +43,9 @@ class Holidays {
 
         fun getHolidays() :MutableList<Calendar> {
             val calendars: MutableList<Calendar> = ArrayList()
+            val min = Calendar.getInstance()
+            min.add(Calendar.DAY_OF_MONTH, -1);
+
             for (holiday in mHolidays) {
                 var h = holiday.split("/")
                 var year = h[0].toInt()
@@ -50,7 +53,9 @@ class Holidays {
                 var dayofMonth = h[2].toInt()
                 val calendar = Calendar.getInstance()
                 calendar[year, month] = dayofMonth
-                calendars.add(calendar)
+                if (min < calendar) {
+                    calendars.add(calendar)
+                }
             }
             return calendars
         }
@@ -94,11 +99,22 @@ class Holidays {
 
     fun getHolidaysByStrings() :String {
         var strHolidays = ""
+        val min = Calendar.getInstance()
+        min.add(Calendar.DAY_OF_MONTH, -1);
+
         for (holiday in mHolidays) {
-            if (strHolidays != "") {
-                strHolidays = strHolidays + ","
+            var h = holiday.split("/")
+            var year = h[0].toInt()
+            var month = h[1].toInt() - 1
+            var dayofMonth = h[2].toInt()
+            val calendar = Calendar.getInstance()
+            calendar[year, month] = dayofMonth
+            if (min < calendar) {
+                if (strHolidays != "") {
+                    strHolidays = strHolidays + ","
+                }
+                strHolidays = strHolidays + holiday
             }
-            strHolidays = strHolidays + holiday
         }
         return strHolidays
     }
