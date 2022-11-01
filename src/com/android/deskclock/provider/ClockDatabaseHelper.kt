@@ -60,13 +60,6 @@ class ClockDatabaseHelper(context: Context)
                 AlarmsColumns.DELETE_AFTER_USE + ") VALUES "
         db.execSQL(insertMe + DEFAULT_ALARM_1)
         db.execSQL(insertMe + DEFAULT_ALARM_2)
-        db.execSQL(insertMe + DEFAULT_ALARM_3)
-        db.execSQL(insertMe + DEFAULT_ALARM_4)
-        db.execSQL(insertMe + DEFAULT_ALARM_5)
-        db.execSQL(insertMe + DEFAULT_ALARM_6)
-        db.execSQL(insertMe + DEFAULT_ALARM_7)
-        db.execSQL(insertMe + DEFAULT_ALARM_8)
-        db.execSQL(insertMe + DEFAULT_ALARM_9)
     }
 
     override fun onUpgrade(db: SQLiteDatabase, oldVersion: Int, currentVersion: Int) {
@@ -202,16 +195,6 @@ class ClockDatabaseHelper(context: Context)
 
         // This creates a default alarm at 9:30 for every Sat,Sun
         private const val DEFAULT_ALARM_2: String = "(9, 00, 96, 0, 1, '', NULL, 0, 0);"
-
-        //                                            HOUR, MIN, DAYS_OF_WEEK(M-F:31), ENABLED, VIBRATION, LABEL, RINGTONE, EXCLUDEHOLIDAYS, DELETE_AFTER_USE)
-        private const val DEFAULT_ALARM_3: String = "(   6,  30,                   31,       0,         1,    '',     NULL,               1,                0);"
-        private const val DEFAULT_ALARM_4: String = "(   7,  30,                   31,       0,         1,    '',       '',               1,                0);"
-        private const val DEFAULT_ALARM_5: String = "(   8,  25,                   31,       0,         1,    '',       '',               1,                0);"
-        private const val DEFAULT_ALARM_6: String = "(   9,   4,                   31,       0,         1,    '',       '',               1,                0);"
-        private const val DEFAULT_ALARM_7: String = "(  11,  30,                   31,       0,         1,    '',       '',               1,                0);"
-        private const val DEFAULT_ALARM_8: String = "(  12,  30,                   31,       0,         1,    '',       '',               1,                0);"
-        private const val DEFAULT_ALARM_9: String = "(  16,   0,                   31,       0,         1,    '',       '',               1,                0);"
-
 
         // Database and table names
         const val DATABASE_NAME: String = "alarms.db"
