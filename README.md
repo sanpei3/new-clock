@@ -4,7 +4,7 @@ CURRENTLY UNDER DEVELOPMENT
 
 # based from :
 * build enviroment : GitHub [qw123wh/new-clock](https://github.com/qw123wh/new-clock)
-* application code: [AOSP Deskclock(kotlin version)](https://android.googlesource.com/platform/packages/apps/DeskClock/+/a0b1d03354e46c2d505adf35966d5fbcc207a980/src/com/android/deskclock/)
+* application code: [AOSP Deskclock(kotlin version)](https://android.googlesource.com/platform/packages/apps/DeskClock/+/6643ed0ca25dae0c1769151f2a43480bb29cbbcd/src/com/android/deskclock/)
 
 # New Features (compare from AOSP version):
 * ALARM: exclude holidayes
