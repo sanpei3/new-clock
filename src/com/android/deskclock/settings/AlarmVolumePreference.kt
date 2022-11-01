@@ -38,7 +38,7 @@ import com.best.deskclock.RingtonePreviewKlaxon
 import com.best.deskclock.Utils
 import com.best.deskclock.data.DataModel
 
-class AlarmVolumePreference(context: Context?, attrs: AttributeSet?) : Preference(context, attrs) {
+class AlarmVolumePreference(context: Context?, attrs: AttributeSet?) : Preference(context!!, attrs) {
     private lateinit var mSeekbar: SeekBar
 
     private var mPreviewPlaying = false
@@ -69,12 +69,12 @@ class AlarmVolumePreference(context: Context?, attrs: AttributeSet?) : Preferenc
         }
 
         mSeekbar.addOnAttachStateChangeListener(object : View.OnAttachStateChangeListener {
-            override fun onViewAttachedToWindow(v: View?) {
+            override fun onViewAttachedToWindow(v: View) {
                 context.getContentResolver().registerContentObserver(Settings.System.CONTENT_URI,
                         true, volumeObserver)
             }
 
-            override fun onViewDetachedFromWindow(v: View?) {
+            override fun onViewDetachedFromWindow(v: View) {
                 context.getContentResolver().unregisterContentObserver(volumeObserver)
             }
         })
